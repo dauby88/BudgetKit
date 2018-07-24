@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'BudgetKit_Example' do
+  pod 'BudgetKit', :path => '../'
+
+  target 'BudgetKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
