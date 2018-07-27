@@ -1,0 +1,6 @@
+framework module BudgetKit {
+  umbrella header "BudgetKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

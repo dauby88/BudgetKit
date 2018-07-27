@@ -1,0 +1,16 @@
+PODS:
+  - BudgetKit (0.1.0)
+
+DEPENDENCIES:
+  - BudgetKit (from `../`)
+
+EXTERNAL SOURCES:
+  BudgetKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BudgetKit: a82d67138c3c8310f01efaa66b29ce5ca86cf013
+
+PODFILE CHECKSUM: ebfde75d572f69553838ddc21be9658487700c4c
+
+COCOAPODS: 1.5.2

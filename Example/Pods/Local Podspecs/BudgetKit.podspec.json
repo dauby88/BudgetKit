@@ -1,0 +1,22 @@
+{
+  "name": "BudgetKit",
+  "version": "0.1.0",
+  "summary": "A short description of BudgetKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Stuart Daubenmire/BudgetKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Stuart Daubenmire": "dauby88@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/Stuart Daubenmire/BudgetKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "BudgetKit/Classes/**/*"
+}
