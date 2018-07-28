@@ -27,7 +27,7 @@ struct PayeeLocationWrapper: Decodable {
 
 // Array of Payee Locations
 struct PayeeLocationsResponse: Decodable {
-    var wrapper: PayeeLocationWrapper
+    var wrapper: PayeeLocationsWrapper
     
     enum CodingKeys: String, CodingKey {
         case wrapper = "data"

@@ -87,21 +87,42 @@ public struct YNAB {
     }
     
     // MARK: - Payees
-    public static func getPayeeList() {}
+    /// Returns all payees.
+    public static func getPayeeList(budgetID: UUID, completion: @escaping YNABCompletion<[Payee]>) {
+        PayeeController.getPayeeList(budgetID: budgetID, completion: completion)
+    }
     
-    public static func getPayee() {}
+    /// Returns single payee.
+    public static func getPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
+        PayeeController.getPayee(budgetID: budgetID, payeeID: payeeID, completion: completion)
+    }
     
     // MARK: - Payee Locations
-    public static func getPayeeLocationList() {}
+    /// Returns all payee locations.
+    public static func getPayeeLocationList(budgetID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+        PayeeLocationsController.getPayeeLocationList(budgetID: budgetID, completion: completion)
+    }
     
-    public static func getPayeeLocation() {}
+    /// Returns a single payee location.
+    public static func getPayeeLocation(budgetID: UUID, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
+        PayeeLocationsController.getPayeeLocation(budgetID: budgetID, payeeLocationID: payeeLocationID, completion: completion)
+    }
     
-    public static func getLocationsForPayee() {}
+    /// Returns all payee locations for the specified payee.
+    public static func getLocationListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+        PayeeLocationsController.getLocationListForPayee(budgetID: budgetID, payeeID: payeeID, completion: completion)
+    }
     
     // MARK: - Months
-    public static func getBudgetMonthList() {}
+    /// Returns all budget months.
+    public static func getBudgetMonthsList(budgetID: UUID, completion: @escaping YNABCompletion<[MonthSummary]>) {
+        MonthsController.getBudgetMonthsList(budgetID: budgetID, completion: completion)
+    }
     
-    public static func getBudgetMonth() {}
+    /// Returns a single budget month.
+    public static func getBudgetMonth(budgetID: UUID, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
+        MonthsController.getBudgetMonth(budgetID: budgetID, month: month, completion: completion)
+    }
     
     // MARK: - Transactions
     public static func getTransactionList() {}
