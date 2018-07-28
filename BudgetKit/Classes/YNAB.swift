@@ -20,7 +20,8 @@ public struct YNAB {
     public static func login(personalAccessToken: String, shouldFail: Bool = false, authenticated: (() -> Void), failed: @escaping ((Error) -> Void)) {
         AuthenticationManager.shared.login(personalAccessToken: personalAccessToken)
         if shouldFail {
-            failed(YNABAPIError.testError)
+            let error = YNABError(id: "000", name: "test_error", detail: "Test Error")
+            failed(error)
         } else {
             authenticated()
         }
@@ -42,26 +43,48 @@ public struct YNAB {
     }
     
     // MARK: - User
-    public static func getUser(completion: @escaping ((Result<User>) -> Void)) {
+    /// Returns authenticated user information.
+    public static func getUser(completion: @escaping YNABCompletion<User>) {
         UserController.getUser(completion: completion)
     }
     
     // MARK: - Budgets
-    public static func getBudgetList() {}
+    /// Returns budgets list with summary information.
+    public static func getBudgetList(completion: @escaping YNABCompletion<[BudgetSummary]>) {
+        BudgetsController.getBudgets(completion: completion)
+    }
     
-    public static func getBudget() {}
+    /// Returns a single budget with all related entities. This resource is effectively a full budget export.
+    public static func getBudget(id: UUID, completion: @escaping YNABCompletion<BudgetDetail>) {
+        BudgetsController.getBudget(id: id, completion: completion)
+    }
     
-    public static func getBudgetSettings() {}
+    /// Returns settings for a budget.
+    public static func getBudgetSettings(id: UUID, completion: @escaping YNABCompletion<BudgetSettings>) {
+        BudgetsController.getBudgetSettings(id: id, completion: completion)
+    }
     
     // MARK: - Accounts
-    public static func getAccountList() {}
+    /// Returns all accounts.
+    public static func getAccountList(budgetID: UUID, completion: @escaping YNABCompletion<[Account]>) {
+        AccountsController.getAccountList(budgetID: budgetID, completion: completion)
+    }
     
-    public static func getAccount() {}
+    /// Returns a single account.
+    public static func getAccount(budgetID: UUID, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
+        AccountsController.getAccount(budgetID: budgetID, accountID: accountID, completion: completion)
+    }
     
     // MARK: - Categories
-    public static func getCategoryList() {}
+    /// Returns all categories grouped by category group.
+    public static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+        CategoriesController.getCategoryList(budgetID: budgetID, completion: completion)
+    }
     
-    public static func getCategory() {}
+    /// Returns a single category.
+    public static func getCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
+        CategoriesController.getCategory(budgetID: budgetID, categoryID: categoryID, completion: completion)
+    }
     
     // MARK: - Payees
     public static func getPayeeList() {}

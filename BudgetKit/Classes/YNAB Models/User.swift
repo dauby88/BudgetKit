@@ -9,10 +9,10 @@
 import Foundation
 
 struct UserResponse: Decodable {
-    var userWrapper: UserWrapper
+    var wrapper: UserWrapper
     
     enum CodingKeys: String, CodingKey {
-        case userWrapper = "data"
+        case wrapper = "data"
     }
 }
 

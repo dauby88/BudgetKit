@@ -13,13 +13,13 @@ struct UserController {
         return API.baseURL + "user/"
     }
         
-    static func getUser(completion: @escaping ((Result<User>) -> Void)) {
+    static func getUser(completion: @escaping YNABCompletion<User>) {
         
         let url = URL(string: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(UserResponse.self, from: data)
-                let user = response.userWrapper.user
+                let user = response.wrapper.user
                 completion(.success(user))
             } catch let error {
                 completion(.failure(error))

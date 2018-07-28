@@ -8,7 +8,20 @@
 
 import Foundation
 
+struct BudgetDetailResponse: Decodable {
+    var wrapper: BudgetDetailWrapper
+    
+    enum CodingKeys: String, CodingKey {
+        case wrapper = "data"
+    }
+}
+
+struct BudgetDetailWrapper: Decodable {
+    var budget: BudgetDetail
+}
+
 public struct BudgetDetail: Decodable {
+    
     public var id: UUID
     public var name: String
     public var lastModifiedOn: String? // TODO: Convert to Date

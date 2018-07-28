@@ -9,10 +9,10 @@
 import Foundation
 
 struct BudgetSummaryResponse: Decodable {
-    var budgetSummaryWrapper: BudgetSummaryWrapper
+    var wrapper: BudgetSummaryWrapper
     
     enum CodingKeys: String, CodingKey {
-        case budgetSummaryWrapper = "data"
+        case wrapper = "data"
     }
 }
 
