@@ -22,15 +22,15 @@ struct PayeeWrapper: Decodable {
 }
 
 // Array of Payees
-struct PayeesResponse: Decodable {
-    var wrapper: PayeesWrapper
+struct PayeeListResponse: Decodable {
+    var wrapper: PayeeListWrapper
     
     enum CodingKeys: String, CodingKey {
         case wrapper = "data"
     }
 }
 
-struct PayeesWrapper: Decodable {
+struct PayeeListWrapper: Decodable {
     var payees: [Payee]
 }
 

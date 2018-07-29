@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct BulkResponse: Decodable {
-    var wrapper: BulkIDWrapper
+struct BulkTransactionResponse: Decodable {
+    var wrapper: BulkTransactionWrapper
     
     enum CodingKeys: String, CodingKey {
         case wrapper = "data"
     }
 }
 
-struct BulkIDWrapper: Decodable {
-    var bulk: BulkIDs
+struct BulkTransactionWrapper: Decodable {
+    var bulk: BulkTransactionIDs
 }
 
-public struct BulkIDs: Decodable {
+public struct BulkTransactionIDs: Decodable {
     public var transactionIDs: [String]
     public var duplicateImportIDs: [String]
     

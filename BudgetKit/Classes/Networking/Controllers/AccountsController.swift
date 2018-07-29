@@ -20,7 +20,7 @@ struct AccountsController {
         let url = URL(string: path, relativeTo: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(AccountsResponse.self, from: data)
+                let response = try JSONDecoder().decode(AccountListResponse.self, from: data)
                 let accounts = response.wrapper.accounts
                 completion(.success(accounts))
             } catch let error {

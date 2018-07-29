@@ -136,7 +136,7 @@ public struct YNAB {
     }
     
     /// Creates multiple transactions.
-    public static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkIDs>) {
+    public static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         TransactionsController.postBulkTransactions(transactions, budgetID: budgetID, completion: completion)
     }
     

@@ -63,7 +63,7 @@ struct TransactionsController {
         }
     }
     
-    static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkIDs>) {
+    static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         var path = budgetID.uuidString
         path += "/transactions"
         let url = URL(string: path, relativeTo: baseURL)!
@@ -74,7 +74,7 @@ struct TransactionsController {
             
             let success: ((Data) -> Void) = { data in
                 do {
-                    let response = try JSONDecoder().decode(BulkResponse.self, from: data)
+                    let response = try JSONDecoder().decode(BulkTransactionResponse.self, from: data)
                     let bulkIDs = response.wrapper.bulk
                     completion(.success(bulkIDs))
                 } catch let error {

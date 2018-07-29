@@ -20,7 +20,7 @@ struct PayeeLocationsController {
         let url = URL(string: path, relativeTo: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(PayeeLocationsResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)
                 let locations = response.wrapper.payeeLocations
                 completion(.success(locations))
             } catch let error {
@@ -63,7 +63,7 @@ struct PayeeLocationsController {
         let url = URL(string: path, relativeTo: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(PayeeLocationsResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)
                 let locations = response.wrapper.payeeLocations
                 completion(.success(locations))
             } catch let error {

@@ -20,7 +20,7 @@ struct PayeeController {
         let url = URL(string: path, relativeTo: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(PayeesResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeListResponse.self, from: data)
                 let payees = response.wrapper.payees
                 completion(.success(payees))
             } catch let error {

@@ -66,15 +66,15 @@ struct AccountWrapper: Decodable {
 
 // Array of Accounts
 
-struct AccountsResponse: Decodable {
-    var wrapper: AccountsWrapper
+struct AccountListResponse: Decodable {
+    var wrapper: AccountListWrapper
     
     enum CodingKeys: String, CodingKey {
         case wrapper = "data"
     }
 }
 
-struct AccountsWrapper: Decodable {
+struct AccountListWrapper: Decodable {
     var accounts: [Account]
 }
 
