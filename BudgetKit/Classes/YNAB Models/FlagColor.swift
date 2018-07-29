@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum FlagColor: String, Decodable {
+public enum FlagColor: String, Codable {
     case red, orange, yellow, green, blue, purple
 }

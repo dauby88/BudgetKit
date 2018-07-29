@@ -8,7 +8,41 @@
 
 import Foundation
 
-struct ScheduledTransactionDetail: Decodable {
+// Single Transaction
+struct ScheduledTransactionResponse: Decodable {
+    var wrapper: ScheduledTransactionWrapper
+    
+    enum CodingKeys: String, CodingKey {
+        case wrapper = "data"
+    }
+}
+
+struct ScheduledTransactionWrapper: Decodable {
+    var transaction: ScheduledTransactionDetail
+    
+    enum CodingKeys: String, CodingKey {
+        case transaction = "scheduled_transaction"
+    }
+}
+
+// Array of Transactions
+struct ScheduledTransactionListResponse: Decodable {
+    var wrapper: ScheduledTransactionListWrapper
+    
+    enum CodingKeys: String, CodingKey {
+        case wrapper = "data"
+    }
+}
+
+struct ScheduledTransactionListWrapper: Decodable {
+    var transactions: [ScheduledTransactionDetail]
+    
+    enum CodingKeys: String, CodingKey {
+        case transactions = "scheduled_transactions"
+    }
+}
+
+public struct ScheduledTransactionDetail: Decodable {
     public var id: UUID
     /// The first date for which the Scheduled Transaction was scheduled.
     public var firstDate: String // TODO: Convert to date

@@ -8,7 +8,11 @@
 
 import Foundation
 
-public struct TransactionSummary: Decodable {
+struct BulkTransactionsWrapper: Encodable {
+    var transactions: [TransactionSummary]
+}
+
+public struct TransactionSummary: Codable {
     public var id: UUID
     public var date: String // TODO: Convert to date
     public var amount: Milliunits

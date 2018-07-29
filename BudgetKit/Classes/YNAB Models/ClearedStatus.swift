@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ClearedStatus: String, Decodable {
+public enum ClearedStatus: String, Codable {
     case cleared, uncleared, reconciled
     
     public var description: String {
