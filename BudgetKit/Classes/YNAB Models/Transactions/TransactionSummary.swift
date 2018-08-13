@@ -20,7 +20,7 @@ public struct TransactionSummary: Codable {
     public var cleared: ClearedStatus
     /// Whether or not the transaction is approved.
     public var isApproved: Bool
-    public var flagColor: FlagColor
+    public var flagColor: FlagColor?
     public var accountID: UUID
     public var payeeID: UUID?
     public var categoryID: UUID?

@@ -41,7 +41,7 @@ public struct TransactionDetail: Decodable {
     public var memo: String?
     public var cleared: ClearedStatus
     public var isApproved: Bool
-    public var flagColor: FlagColor
+    public var flagColor: FlagColor?
     public var accountID: UUID
     public var payeeID: UUID?
     public var categoryID: UUID?

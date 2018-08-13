@@ -22,7 +22,7 @@ public struct SaveTransaction: Decodable {
     public var memo: String?
     public var cleared: ClearedStatus
     public var isApproved: Bool
-    public var flagColor: FlagColor
+    public var flagColor: FlagColor?
     public var importID: String?
     
     enum CodingKeys: String, CodingKey {

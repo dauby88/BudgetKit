@@ -17,7 +17,7 @@ public struct ScheduledTransactionSummary: Decodable {
     public var frequency: TransactionFrequency
     public var amount: Milliunits
     public var memo: String?
-    public var flagColor: FlagColor
+    public var flagColor: FlagColor?
     public var accountID: UUID
     public var payeeID: UUID?
     public var categoryID: UUID?
