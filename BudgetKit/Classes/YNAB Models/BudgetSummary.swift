@@ -27,7 +27,7 @@ struct BudgetSummaryWrapper: Decodable {
 public struct BudgetSummary: Decodable {
     public var id: UUID
     public var name: String
-    public var lastModified: Date?
+    public var lastModified: Date? // TODO: Update to date
     public var firstMonth: Date
     public var lastMonth: Date
     public var dateFormat: DateFormat?
@@ -56,8 +56,8 @@ public struct BudgetSummary: Decodable {
         // Last Modified Date
         let dateDebugDescription = "Date string does not match format expected by formatter."
         let lastModifiedString = try container.decode(String.self, forKey: .lastModified)
-        let iso8610DateFormatter = DateFormatter.iso8601Full
-        if let lastModified = iso8610DateFormatter.date(from: lastModifiedString) {
+        let ynabFormatter = DateFormatter.ynab
+        if let lastModified = ynabFormatter.date(from: lastModifiedString) {
             self.lastModified = lastModified
         } else {
             throw DecodingError.dataCorruptedError(forKey: .lastModified, in: container, debugDescription: dateDebugDescription)

@@ -71,6 +71,7 @@ class WebServiceManager {
             if let taskError = error {
                 failure(taskError)
             } else if let data = data {
+                self.printJSON(from: data)
                 if let wrapper = try? JSONDecoder().decode(YNABErrorWrapper.self, from: data) {
                     let ynabError = wrapper.error
                     failure(ynabError)
@@ -79,5 +80,18 @@ class WebServiceManager {
                 }
             }
         }.resume()
+    }
+    
+    func printJSON(from data: Data) {
+        guard let object = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else { return }
+        if let object = object as? JSONDictionary {
+            guard let newData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else { return }
+            guard let string = String(data: newData, encoding: .utf8) else { return }
+            print(string)
+        } else if let object = object as? [JSONDictionary] {
+            guard let newData = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else { return }
+            guard let string = String(data: newData, encoding: .utf8) else { return }
+            print(string)
+        }
     }
 }

@@ -28,12 +28,12 @@ public struct YNAB {
     }
     
     /// Returns whether any user is currently authenticated. Use this to check for authentication without having to make an API call that returns an authentication failed error.
-    public static var isAuthenticated: Bool {
+    public static var userIsLoggedIn: Bool {
         return AuthenticationManager.shared.isAuthenticated
     }
     
     /// Exact time of access token expiration. Use this to anticipate authentication failed errors if the expiration time might pass during the user's current session.
-    public static var authenticationExpiration: Date? {
+    public static var loginExpiration: Date? {
         return AuthenticationManager.shared.accessTokenExpiration
     }
     
@@ -77,7 +77,12 @@ public struct YNAB {
     
     // MARK: - Categories
     /// Returns all categories grouped by category group.
-    public static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+    public static func getCategoryGroupList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+        CategoriesController.getCategoryGroupList(budgetID: budgetID, completion: completion)
+    }
+    
+    /// Returns all categories regardless of category group
+    public static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[Category]>) {
         CategoriesController.getCategoryList(budgetID: budgetID, completion: completion)
     }
     

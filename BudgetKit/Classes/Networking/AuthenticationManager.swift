@@ -29,7 +29,9 @@ public class AuthenticationManager {
     }
     
     var isAuthenticated: Bool {
-        return accessToken != nil
+        let tokenIsExpired = accessTokenExpiration ?? Date().addingTimeInterval(-10) < Date()
+        let tokenIsNil = accessToken == nil
+        return tokenIsExpired || tokenIsNil ? false : true
     }
     
     var accessTokenExpiration: Date? {
@@ -58,7 +60,6 @@ public class AuthenticationManager {
         
         authSession = SFAuthenticationSession(url: url, callbackURLScheme: callBackScheme) { (url, error) in
             if let authError = error {
-                // Handle error
                 failed(authError)
                 return
             }
@@ -74,6 +75,7 @@ public class AuthenticationManager {
                 let secondsDropCount = firstCount + newAccessToken.count + lastCount - 4
                 if let subsequence = url?.fragment?.dropFirst(secondsDropCount), let seconds = Double(String(subsequence)) {
                     self.accessTokenExpiration = Date(timeIntervalSinceNow: seconds)
+                    print("Token expiration: \(self.accessTokenExpiration!)")
                 }
                 authenticated()
             }
@@ -89,5 +91,6 @@ public class AuthenticationManager {
     
     func clearAuthentication() {
         accessToken = nil
+        accessTokenExpiration = nil
     }
 }

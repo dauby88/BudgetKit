@@ -14,7 +14,7 @@ struct CategoriesController {
         return URL(string: string)!
     }
     
-    static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+    static func getCategoryGroupList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
         var path = budgetID.uuidString
         path += "/categories"
         let url = URL(string: path, relativeTo: baseURL)!
@@ -32,6 +32,21 @@ struct CategoriesController {
         }
         
         WebServiceManager.shared.get(url, success: success, failure: failure)
+    }
+    
+    static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[Category]>) {
+        getCategoryGroupList(budgetID: budgetID) { (result) in
+            switch result {
+            case .success(let categoryGroups):
+                var categories = [Category]()
+                for group in categoryGroups {
+                    categories += group.categories
+                }
+                completion(.success(categories))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
     static func getCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
