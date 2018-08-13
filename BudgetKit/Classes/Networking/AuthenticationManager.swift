@@ -71,13 +71,14 @@ public class AuthenticationManager {
                 newAccessToken = String(newAccessToken.dropFirst(firstCount))
                 newAccessToken = String(newAccessToken.dropLast(lastCount))
                 self.accessToken = newAccessToken
-                // TODO: Get expiration date
                 let secondsDropCount = firstCount + newAccessToken.count + lastCount - 4
                 if let subsequence = url?.fragment?.dropFirst(secondsDropCount), let seconds = Double(String(subsequence)) {
                     self.accessTokenExpiration = Date(timeIntervalSinceNow: seconds)
                     print("Token expiration: \(self.accessTokenExpiration!)")
                 }
-                authenticated()
+                DispatchQueue.main.async {
+                    authenticated()
+                }
             }
         }
         authSession?.start()
