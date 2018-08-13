@@ -9,6 +9,22 @@
 import Foundation
 
 public struct YNAB {
+    
+    public static func convertMilliUnitsToCurrencyAmount(_ milliunits: Milliunits, currencyDecimalDigits: Int) -> Double? {
+        var currencyDigits = currencyDecimalDigits
+        if currencyDigits == 0 {
+            currencyDigits = 2
+        }
+        let decimalToRoundTo = pow(Decimal(10), (3 - min(3, currencyDigits)))
+        var numberToRoundTo = Double(exactly: decimalToRoundTo as NSNumber)!
+        numberToRoundTo = 1 / numberToRoundTo
+        let valueToRound = Double(milliunits) * numberToRoundTo
+        let rounded = round(valueToRound) / numberToRoundTo
+        let currencyAmount = rounded * (0.1 / pow(10, 2))
+        let amountString = String(format: "%.\(currencyDecimalDigits)f", currencyAmount)
+        return Double(amountString)
+    }
+    
     // MARK: - Authentication
     
     /// Standard method for logging in to YNAB.
