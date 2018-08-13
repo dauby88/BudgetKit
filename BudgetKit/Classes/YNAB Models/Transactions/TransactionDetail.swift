@@ -51,7 +51,7 @@ public struct TransactionDetail: Decodable {
     public var accountName: String
     public var payeeName: String?
     public var categoryName: String?
-    public var subTransactions: [SubTransaction]
+    public var subTransactions: [SubTransaction]?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

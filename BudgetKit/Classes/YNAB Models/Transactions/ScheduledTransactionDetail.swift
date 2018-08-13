@@ -61,7 +61,7 @@ public struct ScheduledTransactionDetail: Decodable {
     public var payeeName: String?
     public var categoryName: String?
     /// If a split scheduled transaction, the subtransactions.
-    public var subTransactions: [ScheduledSubTransaction]
+    public var subTransactions: [ScheduledSubTransaction]?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

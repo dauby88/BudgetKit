@@ -33,7 +33,7 @@ public struct BudgetDetail: Decodable {
     public var categories: [Category]
     public var months: [MonthDetail]
     public var transactions: [TransactionSummary]
-    public var subTransactions: [SubTransaction]
+    public var subTransactions: [SubTransaction]?
     public var scheduledTransactions: [ScheduledTransactionSummary]
     public var scheduledSubTransactions: [ScheduledSubTransaction]
     
