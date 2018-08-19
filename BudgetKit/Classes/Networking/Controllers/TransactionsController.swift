@@ -35,13 +35,14 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func postTransaction(_ transaction: TransactionSummary, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+    static func postTransaction(_ transaction: NewTransaction, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
         var path = budgetID.uuidString
         path += "/transactions"
         let url = URL(string: path, relativeTo: baseURL)!
         
         do {
-            let body = try JSONEncoder().encode(transaction)
+            let wrapper = NewTransactionWrapper(transaction: transaction)
+            let body = try JSONEncoder().encode(wrapper)
             
             let success: ((Data) -> Void) = { data in
                 do {
@@ -63,7 +64,7 @@ struct TransactionsController {
         }
     }
     
-    static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
+    static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         var path = budgetID.uuidString
         path += "/transactions"
         let url = URL(string: path, relativeTo: baseURL)!

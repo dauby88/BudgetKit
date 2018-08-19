@@ -152,12 +152,12 @@ public struct YNAB {
     }
     
     /// Creates a transaction.
-    public static func createNewTransaction(_ transaction: TransactionSummary, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+    public static func createNewTransaction(_ transaction: NewTransaction, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
         TransactionsController.postTransaction(transaction, budgetID: budgetID, completion: completion)
     }
     
     /// Creates multiple transactions.
-    public static func postBulkTransactions(_ transactions: [TransactionSummary], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
+    public static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         TransactionsController.postBulkTransactions(transactions, budgetID: budgetID, completion: completion)
     }
     

@@ -8,10 +8,6 @@
 
 import Foundation
 
-struct BulkTransactionsWrapper: Encodable {
-    var transactions: [TransactionSummary]
-}
-
 public struct TransactionSummary: Codable {
     public var id: UUID
     public var date: String // TODO: Convert to date
@@ -46,3 +42,4 @@ public struct TransactionSummary: Codable {
         case isDeleted = "deleted"
     }
 }
+
