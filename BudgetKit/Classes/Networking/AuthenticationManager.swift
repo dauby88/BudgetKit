@@ -76,9 +76,8 @@ public class AuthenticationManager {
                     self.accessTokenExpiration = Date(timeIntervalSinceNow: seconds)
                     print("Token expiration: \(self.accessTokenExpiration!)")
                 }
-                DispatchQueue.main.async {
-                    authenticated()
-                }
+                
+                authenticated()
             }
         }
         authSession?.start()
