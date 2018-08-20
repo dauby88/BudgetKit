@@ -66,7 +66,9 @@ class WebServiceManager {
     }
     
     fileprivate func performDataTask(_ request: URLRequest, success: @escaping (Data) -> Void, failure: @escaping (Error) -> Void) {
-        
+        if let data = request.httpBody {
+            printJSON(from: data)
+        }
         _ = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if let taskError = error {
                 failure(taskError)
