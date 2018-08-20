@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Stuart Daubenmire' => 'dauby88@icloud.com' }
-  s.source           = { :git => 'https://github.com/Stuart Daubenmire/BudgetKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/dauby88/BudgetKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'  
