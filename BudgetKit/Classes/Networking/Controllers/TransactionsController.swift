@@ -66,7 +66,7 @@ struct TransactionsController {
     
     static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         var path = budgetID.uuidString
-        path += "/transactions"
+        path += "/transactions/bulk"
         let url = URL(string: path, relativeTo: baseURL)!
         
         do {
