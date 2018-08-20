@@ -20,7 +20,7 @@ class WebServiceManager {
     // MARK: - URL Session
     
     lazy var session: URLSession = {
-        return initializeSession()
+        return WebServiceManager.shared.initializeSession()
     }()
     
     private func initializeSession() -> URLSession {
