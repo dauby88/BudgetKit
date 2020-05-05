@@ -9,7 +9,7 @@
 import Foundation
 
 public extension DateFormatter {
-    public static let ynab: DateFormatter = {
+    static let ynab: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'+'SS:mm"
         formatter.calendar = Calendar(identifier: .iso8601)
@@ -18,7 +18,7 @@ public extension DateFormatter {
         return formatter
     }()
     
-    public static let yyyyMMdd: DateFormatter = {
+    static let yyyyMMdd: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.calendar = Calendar(identifier: .iso8601)
