@@ -16,20 +16,10 @@ public class AuthenticationManager {
     
     
     /// As specified by YNAB, not sending a "scope" parameter will result in a read & write access token being created, this struct is created for more generic implmentation in the future rather than a "Bool" read only param in the login method https://api.youneedabudget.com/#oauth-authorization-parameters
-    public struct PermissionScope {
+    public enum PermissionScope: String {
         // The possible values for the scope permission
-        public static let readOnly = "read-only"
-        public static let readAndWrite = ""
-        
-        private var _value: String = readAndWrite
-        public var value: String {
-            return _value
-        }
-        
-        init(_ value: String) {
-            _value = value
-        }
-        
+        case readOnly = "read-only"
+        case readAndWrite = ""
     }
     
     // MARK: Properties
@@ -79,8 +69,8 @@ public class AuthenticationManager {
             urlString += "&state=\(state)"
         }
         
-        if permissions.value.count > 0 {
-            urlString += "&scope=\(permissions.value)"
+        if permissions.rawValue.count > 0 {
+            urlString += "&scope=\(permissions.rawValue)"
         }
         
         let url = URL(string: urlString)!
