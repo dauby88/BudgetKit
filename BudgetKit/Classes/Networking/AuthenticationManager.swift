@@ -14,6 +14,24 @@ public class AuthenticationManager {
     private init() {}
     static let shared = AuthenticationManager()
     
+    
+    /// As specified by YNAB, not sending a "scope" parameter will result in a read & write access token being created, this struct is created for more generic implmentation in the future rather than a "Bool" read only param in the login method https://api.youneedabudget.com/#oauth-authorization-parameters
+    public struct PermissionScope {
+        // The possible values for the scope permission
+        public static let readOnly = "read-only"
+        public static let readAndWrite = ""
+        
+        private var _value: String = readAndWrite
+        public var value: String {
+            return _value
+        }
+        
+        init(_ value: String) {
+            _value = value
+        }
+        
+    }
+    
     // MARK: Properties
     
     var authSession: SFAuthenticationSession?
@@ -49,12 +67,22 @@ public class AuthenticationManager {
         accessToken = personalAccessToken
     }
     
-    func login(clientID: String, redirectURI: String, state: String?, authenticated: @escaping (() -> Void), failed: @escaping ((Error) -> Void)) {
+    func login(clientID: String,
+               redirectURI: String,
+               state: String?,
+               permissions: PermissionScope,
+               authenticated: @escaping (() -> Void),
+               failed: @escaping ((Error) -> Void)) {
         
         var urlString = "https://app.youneedabudget.com/oauth/authorize?client_id=\(clientID)&redirect_uri=\(redirectURI)&response_type=token"
         if let state = state {
             urlString += "&state=\(state)"
         }
+        
+        if permissions.value.count > 0 {
+            urlString += "&scope=\(permissions.value)"
+        }
+        
         let url = URL(string: urlString)!
         let callBackScheme = URL(string: redirectURI)?.scheme
         

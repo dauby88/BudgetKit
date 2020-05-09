@@ -28,8 +28,18 @@ public struct YNAB {
     // MARK: - Authentication
     
     /// Standard method for logging in to YNAB.
-    public static func login(clientID: String, redirectURI: String, state: String?, authenticated: @escaping (() -> Void), failed: @escaping ((Error) -> Void)) {
-        AuthenticationManager.shared.login(clientID: clientID, redirectURI: redirectURI, state: state, authenticated: authenticated, failed: failed)
+    public static func login(clientID: String,
+                             redirectURI: String,
+                             state: String?,
+                             permissions: AuthenticationManager.PermissionScope,
+                             authenticated: @escaping (() -> Void),
+                             failed: @escaping ((Error) -> Void)) {
+        AuthenticationManager.shared.login(clientID: clientID,
+                                           redirectURI: redirectURI,
+                                           state: state,
+                                           permissions: permissions,
+                                           authenticated: authenticated,
+                                           failed: failed)
     }
     
     /// Login using your personal access token for testing. Setting the shouldFail parameter to true will trigger the failed closure with a test error. Otherwise the call will always succeed and further calls to the API will use the access token.
