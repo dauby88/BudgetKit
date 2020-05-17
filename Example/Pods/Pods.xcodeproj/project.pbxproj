@@ -16,52 +16,52 @@
 		8B64734DBD70A15DE51AF41D1EEE7156 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		9964EB8E5E7CF53F53A4837B49A4C107 /* BudgetKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A3C5394D10698E1472AC28EA563A11 /* BudgetKit-dummy.m */; };
 		A3B5C05BA22696D094A65CD5155F1F5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		CCAF4B9D2470B90900EC46BB /* ScheduledTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B942470B90800EC46BB /* ScheduledTransactionsController.swift */; };
-		CCAF4B9E2470B90900EC46BB /* PayeeLocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B952470B90800EC46BB /* PayeeLocationsController.swift */; };
-		CCAF4B9F2470B90900EC46BB /* PayeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B962470B90800EC46BB /* PayeeController.swift */; };
-		CCAF4BA02470B90900EC46BB /* AccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B972470B90800EC46BB /* AccountsController.swift */; };
-		CCAF4BA12470B90900EC46BB /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B982470B90800EC46BB /* TransactionsController.swift */; };
-		CCAF4BA22470B90900EC46BB /* BudgetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B992470B90800EC46BB /* BudgetsController.swift */; };
-		CCAF4BA32470B90900EC46BB /* MonthsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9A2470B90800EC46BB /* MonthsController.swift */; };
-		CCAF4BA42470B90900EC46BB /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9B2470B90800EC46BB /* CategoriesController.swift */; };
-		CCAF4BA52470B90900EC46BB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9C2470B90800EC46BB /* UserController.swift */; };
-		CCAF4BAA2470B91C00EC46BB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA62470B91B00EC46BB /* API.swift */; };
-		CCAF4BAB2470B91C00EC46BB /* YNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA72470B91B00EC46BB /* YNABError.swift */; };
-		CCAF4BAC2470B91C00EC46BB /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA82470B91C00EC46BB /* AuthenticationManager.swift */; };
-		CCAF4BAD2470B91C00EC46BB /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA92470B91C00EC46BB /* WebServiceManager.swift */; };
-		CCAF4BF42470B94100EC46BB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD22470B94100EC46BB /* Result.swift */; };
-		CCAF4BF52470B94100EC46BB /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD32470B94100EC46BB /* DateFormatter+Extension.swift */; };
-		CCAF4BF62470B94100EC46BB /* ErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD52470B94100EC46BB /* ErrorDetail.swift */; };
-		CCAF4BF72470B94100EC46BB /* BudgetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD62470B94100EC46BB /* BudgetDetail.swift */; };
-		CCAF4BF82470B94100EC46BB /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD72470B94100EC46BB /* DateFormat.swift */; };
-		CCAF4BF92470B94100EC46BB /* BudgetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD82470B94100EC46BB /* BudgetSettings.swift */; };
-		CCAF4BFA2470B94100EC46BB /* PayeeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD92470B94100EC46BB /* PayeeLocation.swift */; };
-		CCAF4BFB2470B94100EC46BB /* MonthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDA2470B94100EC46BB /* MonthDetail.swift */; };
-		CCAF4BFC2470B94100EC46BB /* ClearedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDB2470B94100EC46BB /* ClearedStatus.swift */; };
-		CCAF4BFD2470B94100EC46BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDC2470B94100EC46BB /* User.swift */; };
-		CCAF4BFE2470B94100EC46BB /* TransactionFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDE2470B94100EC46BB /* TransactionFrequency.swift */; };
-		CCAF4BFF2470B94100EC46BB /* BulkTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDF2470B94100EC46BB /* BulkTransactions.swift */; };
-		CCAF4C002470B94100EC46BB /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE02470B94100EC46BB /* TransactionType.swift */; };
-		CCAF4C012470B94100EC46BB /* ScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE12470B94100EC46BB /* ScheduledSubTransaction.swift */; };
-		CCAF4C022470B94100EC46BB /* TransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE22470B94100EC46BB /* TransactionSummary.swift */; };
-		CCAF4C032470B94100EC46BB /* SubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE32470B94100EC46BB /* SubTransaction.swift */; };
-		CCAF4C042470B94100EC46BB /* TransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE42470B94100EC46BB /* TransactionDetail.swift */; };
-		CCAF4C052470B94100EC46BB /* SaveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE52470B94100EC46BB /* SaveTransaction.swift */; };
-		CCAF4C062470B94100EC46BB /* HybridTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE62470B94100EC46BB /* HybridTransaction.swift */; };
-		CCAF4C072470B94100EC46BB /* ScheduledTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE72470B94100EC46BB /* ScheduledTransactionSummary.swift */; };
-		CCAF4C082470B94100EC46BB /* NewTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE82470B94100EC46BB /* NewTransaction.swift */; };
-		CCAF4C092470B94100EC46BB /* ScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE92470B94100EC46BB /* ScheduledTransactionDetail.swift */; };
-		CCAF4C0A2470B94100EC46BB /* MonthSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEA2470B94100EC46BB /* MonthSummary.swift */; };
-		CCAF4C0B2470B94100EC46BB /* BudgetSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEB2470B94100EC46BB /* BudgetSummary.swift */; };
-		CCAF4C0C2470B94100EC46BB /* CategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEC2470B94100EC46BB /* CategoryGroup.swift */; };
-		CCAF4C0D2470B94100EC46BB /* Payee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BED2470B94100EC46BB /* Payee.swift */; };
-		CCAF4C0E2470B94100EC46BB /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEE2470B94100EC46BB /* GoalType.swift */; };
-		CCAF4C0F2470B94100EC46BB /* CurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEF2470B94100EC46BB /* CurrencyFormat.swift */; };
-		CCAF4C102470B94100EC46BB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF02470B94100EC46BB /* Category.swift */; };
-		CCAF4C112470B94100EC46BB /* FlagColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF12470B94100EC46BB /* FlagColor.swift */; };
-		CCAF4C122470B94100EC46BB /* Milliunits.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF22470B94100EC46BB /* Milliunits.swift */; };
-		CCAF4C132470B94100EC46BB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF32470B94100EC46BB /* Account.swift */; };
-		CCAF4C152470BD5C00EC46BB /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4C142470BD5C00EC46BB /* BaseController.swift */; };
+		CCAF4B9D2470B90900EC46BB /* BKScheduledTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B942470B90800EC46BB /* BKScheduledTransactionsController.swift */; };
+		CCAF4B9E2470B90900EC46BB /* BKPayeeLocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B952470B90800EC46BB /* BKPayeeLocationsController.swift */; };
+		CCAF4B9F2470B90900EC46BB /* BKPayeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B962470B90800EC46BB /* BKPayeeController.swift */; };
+		CCAF4BA02470B90900EC46BB /* BKAccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B972470B90800EC46BB /* BKAccountsController.swift */; };
+		CCAF4BA12470B90900EC46BB /* BKTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B982470B90800EC46BB /* BKTransactionsController.swift */; };
+		CCAF4BA22470B90900EC46BB /* BKBudgetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B992470B90800EC46BB /* BKBudgetsController.swift */; };
+		CCAF4BA32470B90900EC46BB /* BKMonthsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9A2470B90800EC46BB /* BKMonthsController.swift */; };
+		CCAF4BA42470B90900EC46BB /* BKCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9B2470B90800EC46BB /* BKCategoriesController.swift */; };
+		CCAF4BA52470B90900EC46BB /* BKUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4B9C2470B90800EC46BB /* BKUserController.swift */; };
+		CCAF4BAA2470B91C00EC46BB /* BKAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA62470B91B00EC46BB /* BKAPI.swift */; };
+		CCAF4BAB2470B91C00EC46BB /* BKYNABError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA72470B91B00EC46BB /* BKYNABError.swift */; };
+		CCAF4BAC2470B91C00EC46BB /* BKAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA82470B91C00EC46BB /* BKAuthenticationManager.swift */; };
+		CCAF4BAD2470B91C00EC46BB /* BKWebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BA92470B91C00EC46BB /* BKWebServiceManager.swift */; };
+		CCAF4BF42470B94100EC46BB /* BKResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD22470B94100EC46BB /* BKResult.swift */; };
+		CCAF4BF52470B94100EC46BB /* DateFormatter+BK.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD32470B94100EC46BB /* DateFormatter+BK.swift */; };
+		CCAF4BF62470B94100EC46BB /* BKErrorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD52470B94100EC46BB /* BKErrorDetail.swift */; };
+		CCAF4BF72470B94100EC46BB /* BKBudgetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD62470B94100EC46BB /* BKBudgetDetail.swift */; };
+		CCAF4BF82470B94100EC46BB /* BKDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD72470B94100EC46BB /* BKDateFormat.swift */; };
+		CCAF4BF92470B94100EC46BB /* BKBudgetSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD82470B94100EC46BB /* BKBudgetSettings.swift */; };
+		CCAF4BFA2470B94100EC46BB /* BKPayeeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BD92470B94100EC46BB /* BKPayeeLocation.swift */; };
+		CCAF4BFB2470B94100EC46BB /* BKMonthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDA2470B94100EC46BB /* BKMonthDetail.swift */; };
+		CCAF4BFC2470B94100EC46BB /* BKClearedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDB2470B94100EC46BB /* BKClearedStatus.swift */; };
+		CCAF4BFD2470B94100EC46BB /* BKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDC2470B94100EC46BB /* BKUser.swift */; };
+		CCAF4BFE2470B94100EC46BB /* BKTransactionFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDE2470B94100EC46BB /* BKTransactionFrequency.swift */; };
+		CCAF4BFF2470B94100EC46BB /* BKBulkTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BDF2470B94100EC46BB /* BKBulkTransactions.swift */; };
+		CCAF4C002470B94100EC46BB /* BKTransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE02470B94100EC46BB /* BKTransactionType.swift */; };
+		CCAF4C012470B94100EC46BB /* BKScheduledSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE12470B94100EC46BB /* BKScheduledSubTransaction.swift */; };
+		CCAF4C022470B94100EC46BB /* BKTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE22470B94100EC46BB /* BKTransactionSummary.swift */; };
+		CCAF4C032470B94100EC46BB /* BKSubTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE32470B94100EC46BB /* BKSubTransaction.swift */; };
+		CCAF4C042470B94100EC46BB /* BKTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE42470B94100EC46BB /* BKTransactionDetail.swift */; };
+		CCAF4C052470B94100EC46BB /* BKSaveTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE52470B94100EC46BB /* BKSaveTransaction.swift */; };
+		CCAF4C062470B94100EC46BB /* BKHybridTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE62470B94100EC46BB /* BKHybridTransaction.swift */; };
+		CCAF4C072470B94100EC46BB /* BKScheduledTransactionSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE72470B94100EC46BB /* BKScheduledTransactionSummary.swift */; };
+		CCAF4C082470B94100EC46BB /* BKNewTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE82470B94100EC46BB /* BKNewTransaction.swift */; };
+		CCAF4C092470B94100EC46BB /* BKScheduledTransactionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BE92470B94100EC46BB /* BKScheduledTransactionDetail.swift */; };
+		CCAF4C0A2470B94100EC46BB /* BKMonthSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEA2470B94100EC46BB /* BKMonthSummary.swift */; };
+		CCAF4C0B2470B94100EC46BB /* BKBudgetSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEB2470B94100EC46BB /* BKBudgetSummary.swift */; };
+		CCAF4C0C2470B94100EC46BB /* BKCategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEC2470B94100EC46BB /* BKCategoryGroup.swift */; };
+		CCAF4C0D2470B94100EC46BB /* BKPayee.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BED2470B94100EC46BB /* BKPayee.swift */; };
+		CCAF4C0E2470B94100EC46BB /* BKGoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEE2470B94100EC46BB /* BKGoalType.swift */; };
+		CCAF4C0F2470B94100EC46BB /* BKCurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BEF2470B94100EC46BB /* BKCurrencyFormat.swift */; };
+		CCAF4C102470B94100EC46BB /* BKCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF02470B94100EC46BB /* BKCategory.swift */; };
+		CCAF4C112470B94100EC46BB /* BKFlagColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF12470B94100EC46BB /* BKFlagColor.swift */; };
+		CCAF4C122470B94100EC46BB /* BKMilliunits.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF22470B94100EC46BB /* BKMilliunits.swift */; };
+		CCAF4C132470B94100EC46BB /* BKAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF32470B94100EC46BB /* BKAccount.swift */; };
+		CCAF4C152470BD5C00EC46BB /* BKBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4C142470BD5C00EC46BB /* BKBaseController.swift */; };
 		E829A3FDA05CB7FA0FCF51AAB928C191 /* Pods-BudgetKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E2974E1B4D99777813D47FF08651AD /* Pods-BudgetKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -107,52 +107,52 @@
 		C0ED52D013F1AC49FC8A7CAA82FED04F /* Pods-BudgetKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BudgetKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C6B0D7E80BCE0557114A2F5322B3C69F /* Pods-BudgetKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BudgetKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C9EB08E3E3235C0919ADF3645A4B6B57 /* Pods-BudgetKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BudgetKit_Tests-resources.sh"; sourceTree = "<group>"; };
-		CCAF4B942470B90800EC46BB /* ScheduledTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionsController.swift; sourceTree = "<group>"; };
-		CCAF4B952470B90800EC46BB /* PayeeLocationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeLocationsController.swift; sourceTree = "<group>"; };
-		CCAF4B962470B90800EC46BB /* PayeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeController.swift; sourceTree = "<group>"; };
-		CCAF4B972470B90800EC46BB /* AccountsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsController.swift; sourceTree = "<group>"; };
-		CCAF4B982470B90800EC46BB /* TransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
-		CCAF4B992470B90800EC46BB /* BudgetsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetsController.swift; sourceTree = "<group>"; };
-		CCAF4B9A2470B90800EC46BB /* MonthsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthsController.swift; sourceTree = "<group>"; };
-		CCAF4B9B2470B90800EC46BB /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
-		CCAF4B9C2470B90800EC46BB /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		CCAF4BA62470B91B00EC46BB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		CCAF4BA72470B91B00EC46BB /* YNABError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNABError.swift; sourceTree = "<group>"; };
-		CCAF4BA82470B91C00EC46BB /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		CCAF4BA92470B91C00EC46BB /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
-		CCAF4BD22470B94100EC46BB /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		CCAF4BD32470B94100EC46BB /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
-		CCAF4BD52470B94100EC46BB /* ErrorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDetail.swift; sourceTree = "<group>"; };
-		CCAF4BD62470B94100EC46BB /* BudgetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetDetail.swift; sourceTree = "<group>"; };
-		CCAF4BD72470B94100EC46BB /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
-		CCAF4BD82470B94100EC46BB /* BudgetSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetSettings.swift; sourceTree = "<group>"; };
-		CCAF4BD92470B94100EC46BB /* PayeeLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeLocation.swift; sourceTree = "<group>"; };
-		CCAF4BDA2470B94100EC46BB /* MonthDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDetail.swift; sourceTree = "<group>"; };
-		CCAF4BDB2470B94100EC46BB /* ClearedStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearedStatus.swift; sourceTree = "<group>"; };
-		CCAF4BDC2470B94100EC46BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		CCAF4BDE2470B94100EC46BB /* TransactionFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionFrequency.swift; sourceTree = "<group>"; };
-		CCAF4BDF2470B94100EC46BB /* BulkTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulkTransactions.swift; sourceTree = "<group>"; };
-		CCAF4BE02470B94100EC46BB /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
-		CCAF4BE12470B94100EC46BB /* ScheduledSubTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledSubTransaction.swift; sourceTree = "<group>"; };
-		CCAF4BE22470B94100EC46BB /* TransactionSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionSummary.swift; sourceTree = "<group>"; };
-		CCAF4BE32470B94100EC46BB /* SubTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTransaction.swift; sourceTree = "<group>"; };
-		CCAF4BE42470B94100EC46BB /* TransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetail.swift; sourceTree = "<group>"; };
-		CCAF4BE52470B94100EC46BB /* SaveTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTransaction.swift; sourceTree = "<group>"; };
-		CCAF4BE62470B94100EC46BB /* HybridTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HybridTransaction.swift; sourceTree = "<group>"; };
-		CCAF4BE72470B94100EC46BB /* ScheduledTransactionSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionSummary.swift; sourceTree = "<group>"; };
-		CCAF4BE82470B94100EC46BB /* NewTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransaction.swift; sourceTree = "<group>"; };
-		CCAF4BE92470B94100EC46BB /* ScheduledTransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTransactionDetail.swift; sourceTree = "<group>"; };
-		CCAF4BEA2470B94100EC46BB /* MonthSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthSummary.swift; sourceTree = "<group>"; };
-		CCAF4BEB2470B94100EC46BB /* BudgetSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetSummary.swift; sourceTree = "<group>"; };
-		CCAF4BEC2470B94100EC46BB /* CategoryGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryGroup.swift; sourceTree = "<group>"; };
-		CCAF4BED2470B94100EC46BB /* Payee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payee.swift; sourceTree = "<group>"; };
-		CCAF4BEE2470B94100EC46BB /* GoalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
-		CCAF4BEF2470B94100EC46BB /* CurrencyFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormat.swift; sourceTree = "<group>"; };
-		CCAF4BF02470B94100EC46BB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		CCAF4BF12470B94100EC46BB /* FlagColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagColor.swift; sourceTree = "<group>"; };
-		CCAF4BF22470B94100EC46BB /* Milliunits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Milliunits.swift; sourceTree = "<group>"; };
-		CCAF4BF32470B94100EC46BB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		CCAF4C142470BD5C00EC46BB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		CCAF4B942470B90800EC46BB /* BKScheduledTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKScheduledTransactionsController.swift; sourceTree = "<group>"; };
+		CCAF4B952470B90800EC46BB /* BKPayeeLocationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPayeeLocationsController.swift; sourceTree = "<group>"; };
+		CCAF4B962470B90800EC46BB /* BKPayeeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPayeeController.swift; sourceTree = "<group>"; };
+		CCAF4B972470B90800EC46BB /* BKAccountsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAccountsController.swift; sourceTree = "<group>"; };
+		CCAF4B982470B90800EC46BB /* BKTransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTransactionsController.swift; sourceTree = "<group>"; };
+		CCAF4B992470B90800EC46BB /* BKBudgetsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKBudgetsController.swift; sourceTree = "<group>"; };
+		CCAF4B9A2470B90800EC46BB /* BKMonthsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMonthsController.swift; sourceTree = "<group>"; };
+		CCAF4B9B2470B90800EC46BB /* BKCategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCategoriesController.swift; sourceTree = "<group>"; };
+		CCAF4B9C2470B90800EC46BB /* BKUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUserController.swift; sourceTree = "<group>"; };
+		CCAF4BA62470B91B00EC46BB /* BKAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAPI.swift; sourceTree = "<group>"; };
+		CCAF4BA72470B91B00EC46BB /* BKYNABError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKYNABError.swift; sourceTree = "<group>"; };
+		CCAF4BA82470B91C00EC46BB /* BKAuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAuthenticationManager.swift; sourceTree = "<group>"; };
+		CCAF4BA92470B91C00EC46BB /* BKWebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKWebServiceManager.swift; sourceTree = "<group>"; };
+		CCAF4BD22470B94100EC46BB /* BKResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKResult.swift; sourceTree = "<group>"; };
+		CCAF4BD32470B94100EC46BB /* DateFormatter+BK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+BK.swift"; sourceTree = "<group>"; };
+		CCAF4BD52470B94100EC46BB /* BKErrorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKErrorDetail.swift; sourceTree = "<group>"; };
+		CCAF4BD62470B94100EC46BB /* BKBudgetDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKBudgetDetail.swift; sourceTree = "<group>"; };
+		CCAF4BD72470B94100EC46BB /* BKDateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKDateFormat.swift; sourceTree = "<group>"; };
+		CCAF4BD82470B94100EC46BB /* BKBudgetSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKBudgetSettings.swift; sourceTree = "<group>"; };
+		CCAF4BD92470B94100EC46BB /* BKPayeeLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPayeeLocation.swift; sourceTree = "<group>"; };
+		CCAF4BDA2470B94100EC46BB /* BKMonthDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMonthDetail.swift; sourceTree = "<group>"; };
+		CCAF4BDB2470B94100EC46BB /* BKClearedStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKClearedStatus.swift; sourceTree = "<group>"; };
+		CCAF4BDC2470B94100EC46BB /* BKUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUser.swift; sourceTree = "<group>"; };
+		CCAF4BDE2470B94100EC46BB /* BKTransactionFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTransactionFrequency.swift; sourceTree = "<group>"; };
+		CCAF4BDF2470B94100EC46BB /* BKBulkTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKBulkTransactions.swift; sourceTree = "<group>"; };
+		CCAF4BE02470B94100EC46BB /* BKTransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTransactionType.swift; sourceTree = "<group>"; };
+		CCAF4BE12470B94100EC46BB /* BKScheduledSubTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKScheduledSubTransaction.swift; sourceTree = "<group>"; };
+		CCAF4BE22470B94100EC46BB /* BKTransactionSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTransactionSummary.swift; sourceTree = "<group>"; };
+		CCAF4BE32470B94100EC46BB /* BKSubTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSubTransaction.swift; sourceTree = "<group>"; };
+		CCAF4BE42470B94100EC46BB /* BKTransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTransactionDetail.swift; sourceTree = "<group>"; };
+		CCAF4BE52470B94100EC46BB /* BKSaveTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSaveTransaction.swift; sourceTree = "<group>"; };
+		CCAF4BE62470B94100EC46BB /* BKHybridTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKHybridTransaction.swift; sourceTree = "<group>"; };
+		CCAF4BE72470B94100EC46BB /* BKScheduledTransactionSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKScheduledTransactionSummary.swift; sourceTree = "<group>"; };
+		CCAF4BE82470B94100EC46BB /* BKNewTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKNewTransaction.swift; sourceTree = "<group>"; };
+		CCAF4BE92470B94100EC46BB /* BKScheduledTransactionDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKScheduledTransactionDetail.swift; sourceTree = "<group>"; };
+		CCAF4BEA2470B94100EC46BB /* BKMonthSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMonthSummary.swift; sourceTree = "<group>"; };
+		CCAF4BEB2470B94100EC46BB /* BKBudgetSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKBudgetSummary.swift; sourceTree = "<group>"; };
+		CCAF4BEC2470B94100EC46BB /* BKCategoryGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCategoryGroup.swift; sourceTree = "<group>"; };
+		CCAF4BED2470B94100EC46BB /* BKPayee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPayee.swift; sourceTree = "<group>"; };
+		CCAF4BEE2470B94100EC46BB /* BKGoalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGoalType.swift; sourceTree = "<group>"; };
+		CCAF4BEF2470B94100EC46BB /* BKCurrencyFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCurrencyFormat.swift; sourceTree = "<group>"; };
+		CCAF4BF02470B94100EC46BB /* BKCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKCategory.swift; sourceTree = "<group>"; };
+		CCAF4BF12470B94100EC46BB /* BKFlagColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKFlagColor.swift; sourceTree = "<group>"; };
+		CCAF4BF22470B94100EC46BB /* BKMilliunits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMilliunits.swift; sourceTree = "<group>"; };
+		CCAF4BF32470B94100EC46BB /* BKAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAccount.swift; sourceTree = "<group>"; };
+		CCAF4C142470BD5C00EC46BB /* BKBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKBaseController.swift; sourceTree = "<group>"; };
 		CD2895842E40150E5E7E213C74D73619 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAFDA36A785D21A17CCBFC7324319736 /* Pods-BudgetKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BudgetKit_Tests.modulemap"; sourceTree = "<group>"; };
 		DBC930E8D34D816FF2CA3B0219C6A15D /* BudgetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BudgetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,10 +290,10 @@
 		87092238210B7A16003DFCA3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF4BA62470B91B00EC46BB /* API.swift */,
-				CCAF4BA82470B91C00EC46BB /* AuthenticationManager.swift */,
-				CCAF4BA92470B91C00EC46BB /* WebServiceManager.swift */,
-				CCAF4BA72470B91B00EC46BB /* YNABError.swift */,
+				CCAF4BA62470B91B00EC46BB /* BKAPI.swift */,
+				CCAF4BA82470B91C00EC46BB /* BKAuthenticationManager.swift */,
+				CCAF4BA92470B91C00EC46BB /* BKWebServiceManager.swift */,
+				CCAF4BA72470B91B00EC46BB /* BKYNABError.swift */,
 				CCAF4B932470B90800EC46BB /* Controllers */,
 			);
 			name = Networking;
@@ -338,16 +338,16 @@
 		CCAF4B932470B90800EC46BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF4C142470BD5C00EC46BB /* BaseController.swift */,
-				CCAF4B982470B90800EC46BB /* TransactionsController.swift */,
-				CCAF4B942470B90800EC46BB /* ScheduledTransactionsController.swift */,
-				CCAF4B952470B90800EC46BB /* PayeeLocationsController.swift */,
-				CCAF4B962470B90800EC46BB /* PayeeController.swift */,
-				CCAF4B972470B90800EC46BB /* AccountsController.swift */,
-				CCAF4B992470B90800EC46BB /* BudgetsController.swift */,
-				CCAF4B9A2470B90800EC46BB /* MonthsController.swift */,
-				CCAF4B9B2470B90800EC46BB /* CategoriesController.swift */,
-				CCAF4B9C2470B90800EC46BB /* UserController.swift */,
+				CCAF4C142470BD5C00EC46BB /* BKBaseController.swift */,
+				CCAF4B982470B90800EC46BB /* BKTransactionsController.swift */,
+				CCAF4B942470B90800EC46BB /* BKScheduledTransactionsController.swift */,
+				CCAF4B952470B90800EC46BB /* BKPayeeLocationsController.swift */,
+				CCAF4B962470B90800EC46BB /* BKPayeeController.swift */,
+				CCAF4B972470B90800EC46BB /* BKAccountsController.swift */,
+				CCAF4B992470B90800EC46BB /* BKBudgetsController.swift */,
+				CCAF4B9A2470B90800EC46BB /* BKMonthsController.swift */,
+				CCAF4B9B2470B90800EC46BB /* BKCategoriesController.swift */,
+				CCAF4B9C2470B90800EC46BB /* BKUserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,8 +355,8 @@
 		CCAF4BD12470B94100EC46BB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF4BD22470B94100EC46BB /* Result.swift */,
-				CCAF4BD32470B94100EC46BB /* DateFormatter+Extension.swift */,
+				CCAF4BD22470B94100EC46BB /* BKResult.swift */,
+				CCAF4BD32470B94100EC46BB /* DateFormatter+BK.swift */,
 			);
 			name = Helpers;
 			path = BudgetKit/Classes/Helpers;
@@ -365,25 +365,25 @@
 		CCAF4BD42470B94100EC46BB /* YNAB Models */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF4BD52470B94100EC46BB /* ErrorDetail.swift */,
-				CCAF4BD62470B94100EC46BB /* BudgetDetail.swift */,
-				CCAF4BD72470B94100EC46BB /* DateFormat.swift */,
-				CCAF4BD82470B94100EC46BB /* BudgetSettings.swift */,
-				CCAF4BD92470B94100EC46BB /* PayeeLocation.swift */,
-				CCAF4BDA2470B94100EC46BB /* MonthDetail.swift */,
-				CCAF4BDB2470B94100EC46BB /* ClearedStatus.swift */,
-				CCAF4BDC2470B94100EC46BB /* User.swift */,
 				CCAF4BDD2470B94100EC46BB /* Transactions */,
-				CCAF4BEA2470B94100EC46BB /* MonthSummary.swift */,
-				CCAF4BEB2470B94100EC46BB /* BudgetSummary.swift */,
-				CCAF4BEC2470B94100EC46BB /* CategoryGroup.swift */,
-				CCAF4BED2470B94100EC46BB /* Payee.swift */,
-				CCAF4BEE2470B94100EC46BB /* GoalType.swift */,
-				CCAF4BEF2470B94100EC46BB /* CurrencyFormat.swift */,
-				CCAF4BF02470B94100EC46BB /* Category.swift */,
-				CCAF4BF12470B94100EC46BB /* FlagColor.swift */,
-				CCAF4BF22470B94100EC46BB /* Milliunits.swift */,
-				CCAF4BF32470B94100EC46BB /* Account.swift */,
+				CCAF4BD52470B94100EC46BB /* BKErrorDetail.swift */,
+				CCAF4BD62470B94100EC46BB /* BKBudgetDetail.swift */,
+				CCAF4BD72470B94100EC46BB /* BKDateFormat.swift */,
+				CCAF4BD82470B94100EC46BB /* BKBudgetSettings.swift */,
+				CCAF4BD92470B94100EC46BB /* BKPayeeLocation.swift */,
+				CCAF4BDA2470B94100EC46BB /* BKMonthDetail.swift */,
+				CCAF4BDB2470B94100EC46BB /* BKClearedStatus.swift */,
+				CCAF4BDC2470B94100EC46BB /* BKUser.swift */,
+				CCAF4BEA2470B94100EC46BB /* BKMonthSummary.swift */,
+				CCAF4BEB2470B94100EC46BB /* BKBudgetSummary.swift */,
+				CCAF4BEC2470B94100EC46BB /* BKCategoryGroup.swift */,
+				CCAF4BED2470B94100EC46BB /* BKPayee.swift */,
+				CCAF4BEE2470B94100EC46BB /* BKGoalType.swift */,
+				CCAF4BEF2470B94100EC46BB /* BKCurrencyFormat.swift */,
+				CCAF4BF02470B94100EC46BB /* BKCategory.swift */,
+				CCAF4BF12470B94100EC46BB /* BKFlagColor.swift */,
+				CCAF4BF22470B94100EC46BB /* BKMilliunits.swift */,
+				CCAF4BF32470B94100EC46BB /* BKAccount.swift */,
 			);
 			name = "YNAB Models";
 			path = "BudgetKit/Classes/YNAB Models";
@@ -392,18 +392,18 @@
 		CCAF4BDD2470B94100EC46BB /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				CCAF4BDE2470B94100EC46BB /* TransactionFrequency.swift */,
-				CCAF4BDF2470B94100EC46BB /* BulkTransactions.swift */,
-				CCAF4BE02470B94100EC46BB /* TransactionType.swift */,
-				CCAF4BE12470B94100EC46BB /* ScheduledSubTransaction.swift */,
-				CCAF4BE22470B94100EC46BB /* TransactionSummary.swift */,
-				CCAF4BE32470B94100EC46BB /* SubTransaction.swift */,
-				CCAF4BE42470B94100EC46BB /* TransactionDetail.swift */,
-				CCAF4BE52470B94100EC46BB /* SaveTransaction.swift */,
-				CCAF4BE62470B94100EC46BB /* HybridTransaction.swift */,
-				CCAF4BE72470B94100EC46BB /* ScheduledTransactionSummary.swift */,
-				CCAF4BE82470B94100EC46BB /* NewTransaction.swift */,
-				CCAF4BE92470B94100EC46BB /* ScheduledTransactionDetail.swift */,
+				CCAF4BDE2470B94100EC46BB /* BKTransactionFrequency.swift */,
+				CCAF4BDF2470B94100EC46BB /* BKBulkTransactions.swift */,
+				CCAF4BE02470B94100EC46BB /* BKTransactionType.swift */,
+				CCAF4BE12470B94100EC46BB /* BKScheduledSubTransaction.swift */,
+				CCAF4BE22470B94100EC46BB /* BKTransactionSummary.swift */,
+				CCAF4BE32470B94100EC46BB /* BKSubTransaction.swift */,
+				CCAF4BE42470B94100EC46BB /* BKTransactionDetail.swift */,
+				CCAF4BE52470B94100EC46BB /* BKSaveTransaction.swift */,
+				CCAF4BE62470B94100EC46BB /* BKHybridTransaction.swift */,
+				CCAF4BE72470B94100EC46BB /* BKScheduledTransactionSummary.swift */,
+				CCAF4BE82470B94100EC46BB /* BKNewTransaction.swift */,
+				CCAF4BE92470B94100EC46BB /* BKScheduledTransactionDetail.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -530,54 +530,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCAF4BAC2470B91C00EC46BB /* AuthenticationManager.swift in Sources */,
-				CCAF4BAB2470B91C00EC46BB /* YNABError.swift in Sources */,
-				CCAF4BFB2470B94100EC46BB /* MonthDetail.swift in Sources */,
-				CCAF4C0A2470B94100EC46BB /* MonthSummary.swift in Sources */,
-				CCAF4BFD2470B94100EC46BB /* User.swift in Sources */,
-				CCAF4C0B2470B94100EC46BB /* BudgetSummary.swift in Sources */,
-				CCAF4BA42470B90900EC46BB /* CategoriesController.swift in Sources */,
-				CCAF4BFE2470B94100EC46BB /* TransactionFrequency.swift in Sources */,
-				CCAF4C0E2470B94100EC46BB /* GoalType.swift in Sources */,
-				CCAF4C062470B94100EC46BB /* HybridTransaction.swift in Sources */,
-				CCAF4BAA2470B91C00EC46BB /* API.swift in Sources */,
-				CCAF4BA12470B90900EC46BB /* TransactionsController.swift in Sources */,
-				CCAF4BFA2470B94100EC46BB /* PayeeLocation.swift in Sources */,
-				CCAF4C122470B94100EC46BB /* Milliunits.swift in Sources */,
-				CCAF4BF62470B94100EC46BB /* ErrorDetail.swift in Sources */,
-				CCAF4C132470B94100EC46BB /* Account.swift in Sources */,
-				CCAF4C082470B94100EC46BB /* NewTransaction.swift in Sources */,
-				CCAF4C112470B94100EC46BB /* FlagColor.swift in Sources */,
-				CCAF4B9F2470B90900EC46BB /* PayeeController.swift in Sources */,
-				CCAF4C042470B94100EC46BB /* TransactionDetail.swift in Sources */,
-				CCAF4BF72470B94100EC46BB /* BudgetDetail.swift in Sources */,
-				CCAF4C0C2470B94100EC46BB /* CategoryGroup.swift in Sources */,
-				CCAF4BFC2470B94100EC46BB /* ClearedStatus.swift in Sources */,
-				CCAF4BF92470B94100EC46BB /* BudgetSettings.swift in Sources */,
-				CCAF4BF42470B94100EC46BB /* Result.swift in Sources */,
-				CCAF4C0D2470B94100EC46BB /* Payee.swift in Sources */,
-				CCAF4C072470B94100EC46BB /* ScheduledTransactionSummary.swift in Sources */,
-				CCAF4C022470B94100EC46BB /* TransactionSummary.swift in Sources */,
+				CCAF4BAC2470B91C00EC46BB /* BKAuthenticationManager.swift in Sources */,
+				CCAF4BAB2470B91C00EC46BB /* BKYNABError.swift in Sources */,
+				CCAF4BFB2470B94100EC46BB /* BKMonthDetail.swift in Sources */,
+				CCAF4C0A2470B94100EC46BB /* BKMonthSummary.swift in Sources */,
+				CCAF4BFD2470B94100EC46BB /* BKUser.swift in Sources */,
+				CCAF4C0B2470B94100EC46BB /* BKBudgetSummary.swift in Sources */,
+				CCAF4BA42470B90900EC46BB /* BKCategoriesController.swift in Sources */,
+				CCAF4BFE2470B94100EC46BB /* BKTransactionFrequency.swift in Sources */,
+				CCAF4C0E2470B94100EC46BB /* BKGoalType.swift in Sources */,
+				CCAF4C062470B94100EC46BB /* BKHybridTransaction.swift in Sources */,
+				CCAF4BAA2470B91C00EC46BB /* BKAPI.swift in Sources */,
+				CCAF4BA12470B90900EC46BB /* BKTransactionsController.swift in Sources */,
+				CCAF4BFA2470B94100EC46BB /* BKPayeeLocation.swift in Sources */,
+				CCAF4C122470B94100EC46BB /* BKMilliunits.swift in Sources */,
+				CCAF4BF62470B94100EC46BB /* BKErrorDetail.swift in Sources */,
+				CCAF4C132470B94100EC46BB /* BKAccount.swift in Sources */,
+				CCAF4C082470B94100EC46BB /* BKNewTransaction.swift in Sources */,
+				CCAF4C112470B94100EC46BB /* BKFlagColor.swift in Sources */,
+				CCAF4B9F2470B90900EC46BB /* BKPayeeController.swift in Sources */,
+				CCAF4C042470B94100EC46BB /* BKTransactionDetail.swift in Sources */,
+				CCAF4BF72470B94100EC46BB /* BKBudgetDetail.swift in Sources */,
+				CCAF4C0C2470B94100EC46BB /* BKCategoryGroup.swift in Sources */,
+				CCAF4BFC2470B94100EC46BB /* BKClearedStatus.swift in Sources */,
+				CCAF4BF92470B94100EC46BB /* BKBudgetSettings.swift in Sources */,
+				CCAF4BF42470B94100EC46BB /* BKResult.swift in Sources */,
+				CCAF4C0D2470B94100EC46BB /* BKPayee.swift in Sources */,
+				CCAF4C072470B94100EC46BB /* BKScheduledTransactionSummary.swift in Sources */,
+				CCAF4C022470B94100EC46BB /* BKTransactionSummary.swift in Sources */,
 				87092267210B7A16003DFCA3 /* YNAB.swift in Sources */,
 				9964EB8E5E7CF53F53A4837B49A4C107 /* BudgetKit-dummy.m in Sources */,
-				CCAF4C012470B94100EC46BB /* ScheduledSubTransaction.swift in Sources */,
-				CCAF4BA32470B90900EC46BB /* MonthsController.swift in Sources */,
-				CCAF4BA52470B90900EC46BB /* UserController.swift in Sources */,
-				CCAF4C092470B94100EC46BB /* ScheduledTransactionDetail.swift in Sources */,
-				CCAF4B9E2470B90900EC46BB /* PayeeLocationsController.swift in Sources */,
-				CCAF4C002470B94100EC46BB /* TransactionType.swift in Sources */,
-				CCAF4BA22470B90900EC46BB /* BudgetsController.swift in Sources */,
-				CCAF4BAD2470B91C00EC46BB /* WebServiceManager.swift in Sources */,
-				CCAF4BFF2470B94100EC46BB /* BulkTransactions.swift in Sources */,
-				CCAF4BF52470B94100EC46BB /* DateFormatter+Extension.swift in Sources */,
-				CCAF4C052470B94100EC46BB /* SaveTransaction.swift in Sources */,
-				CCAF4C032470B94100EC46BB /* SubTransaction.swift in Sources */,
-				CCAF4B9D2470B90900EC46BB /* ScheduledTransactionsController.swift in Sources */,
-				CCAF4BF82470B94100EC46BB /* DateFormat.swift in Sources */,
-				CCAF4C0F2470B94100EC46BB /* CurrencyFormat.swift in Sources */,
-				CCAF4BA02470B90900EC46BB /* AccountsController.swift in Sources */,
-				CCAF4C152470BD5C00EC46BB /* BaseController.swift in Sources */,
-				CCAF4C102470B94100EC46BB /* Category.swift in Sources */,
+				CCAF4C012470B94100EC46BB /* BKScheduledSubTransaction.swift in Sources */,
+				CCAF4BA32470B90900EC46BB /* BKMonthsController.swift in Sources */,
+				CCAF4BA52470B90900EC46BB /* BKUserController.swift in Sources */,
+				CCAF4C092470B94100EC46BB /* BKScheduledTransactionDetail.swift in Sources */,
+				CCAF4B9E2470B90900EC46BB /* BKPayeeLocationsController.swift in Sources */,
+				CCAF4C002470B94100EC46BB /* BKTransactionType.swift in Sources */,
+				CCAF4BA22470B90900EC46BB /* BKBudgetsController.swift in Sources */,
+				CCAF4BAD2470B91C00EC46BB /* BKWebServiceManager.swift in Sources */,
+				CCAF4BFF2470B94100EC46BB /* BKBulkTransactions.swift in Sources */,
+				CCAF4BF52470B94100EC46BB /* DateFormatter+BK.swift in Sources */,
+				CCAF4C052470B94100EC46BB /* BKSaveTransaction.swift in Sources */,
+				CCAF4C032470B94100EC46BB /* BKSubTransaction.swift in Sources */,
+				CCAF4B9D2470B90900EC46BB /* BKScheduledTransactionsController.swift in Sources */,
+				CCAF4BF82470B94100EC46BB /* BKDateFormat.swift in Sources */,
+				CCAF4C0F2470B94100EC46BB /* BKCurrencyFormat.swift in Sources */,
+				CCAF4BA02470B90900EC46BB /* BKAccountsController.swift in Sources */,
+				CCAF4C152470BD5C00EC46BB /* BKBaseController.swift in Sources */,
+				CCAF4C102470B94100EC46BB /* BKCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
