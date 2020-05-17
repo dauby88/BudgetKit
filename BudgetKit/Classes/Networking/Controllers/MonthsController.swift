@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct MonthsController {
+class MonthsController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getBudgetMonthsList(budgetID: UUID, completion: @escaping YNABCompletion<[MonthSummary]>) {
-        var path = budgetID.uuidString
-        path += "/months"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getBudgetMonthsList(budgetID: UUID?, completion: @escaping YNABCompletion<[MonthSummary]>) {
+        let path = initialPath(forBudget: budgetID) + "/months"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(MonthSummariesResponse.self, from: data)
@@ -34,11 +29,10 @@ struct MonthsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getBudgetMonth(budgetID: UUID, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
-        var path = budgetID.uuidString
-        path += "/months/"
-        path += month
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getBudgetMonth(budgetID: UUID?, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
+        let path = initialPath(forBudget: budgetID) + "/months/" + month
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(MonthDetailResponse.self, from: data)

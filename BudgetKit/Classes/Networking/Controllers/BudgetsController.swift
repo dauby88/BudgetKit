@@ -7,15 +7,10 @@
 
 import Foundation
 
-struct BudgetsController {
-    
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
+class BudgetsController: BaseController {
     
     static func getBudgets(completion: @escaping YNABCompletion<[BudgetSummary]>) {
-        let url = baseURL
+        let url = URL(string: budgetsBaseUrl())!
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(BudgetSummaryResponse.self, from: data)
@@ -32,9 +27,10 @@ struct BudgetsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getBudget(id: UUID, completion: @escaping YNABCompletion<BudgetDetail>) {
-        let path = id.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getBudget(id: UUID?, completion: @escaping YNABCompletion<BudgetDetail>) {
+        let path = initialPath(forBudget: id)
+        let url = URL(string: path, relativeTo: baseURL(forBudget: id))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(BudgetDetailResponse.self, from: data)
@@ -52,8 +48,9 @@ struct BudgetsController {
     }
     
     static func getBudgetSettings(id: UUID, completion: @escaping YNABCompletion<BudgetSettings>) {
-        let path = id.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+        let path = initialPath(forBudget: id) + "/settings"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: id))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(BudgetSettingsResponse.self, from: data)

@@ -61,6 +61,7 @@
 		CCAF4C112470B94100EC46BB /* FlagColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF12470B94100EC46BB /* FlagColor.swift */; };
 		CCAF4C122470B94100EC46BB /* Milliunits.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF22470B94100EC46BB /* Milliunits.swift */; };
 		CCAF4C132470B94100EC46BB /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4BF32470B94100EC46BB /* Account.swift */; };
+		CCAF4C152470BD5C00EC46BB /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF4C142470BD5C00EC46BB /* BaseController.swift */; };
 		E829A3FDA05CB7FA0FCF51AAB928C191 /* Pods-BudgetKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E2974E1B4D99777813D47FF08651AD /* Pods-BudgetKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		CCAF4BF12470B94100EC46BB /* FlagColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagColor.swift; sourceTree = "<group>"; };
 		CCAF4BF22470B94100EC46BB /* Milliunits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Milliunits.swift; sourceTree = "<group>"; };
 		CCAF4BF32470B94100EC46BB /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CCAF4C142470BD5C00EC46BB /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		CD2895842E40150E5E7E213C74D73619 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DAFDA36A785D21A17CCBFC7324319736 /* Pods-BudgetKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BudgetKit_Tests.modulemap"; sourceTree = "<group>"; };
 		DBC930E8D34D816FF2CA3B0219C6A15D /* BudgetKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BudgetKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,11 +338,12 @@
 		CCAF4B932470B90800EC46BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CCAF4C142470BD5C00EC46BB /* BaseController.swift */,
+				CCAF4B982470B90800EC46BB /* TransactionsController.swift */,
 				CCAF4B942470B90800EC46BB /* ScheduledTransactionsController.swift */,
 				CCAF4B952470B90800EC46BB /* PayeeLocationsController.swift */,
 				CCAF4B962470B90800EC46BB /* PayeeController.swift */,
 				CCAF4B972470B90800EC46BB /* AccountsController.swift */,
-				CCAF4B982470B90800EC46BB /* TransactionsController.swift */,
 				CCAF4B992470B90800EC46BB /* BudgetsController.swift */,
 				CCAF4B9A2470B90800EC46BB /* MonthsController.swift */,
 				CCAF4B9B2470B90800EC46BB /* CategoriesController.swift */,
@@ -573,6 +576,7 @@
 				CCAF4BF82470B94100EC46BB /* DateFormat.swift in Sources */,
 				CCAF4C0F2470B94100EC46BB /* CurrencyFormat.swift in Sources */,
 				CCAF4BA02470B90900EC46BB /* AccountsController.swift in Sources */,
+				CCAF4C152470BD5C00EC46BB /* BaseController.swift in Sources */,
 				CCAF4C102470B94100EC46BB /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

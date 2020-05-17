@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct CategoriesController {
+class CategoriesController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getCategoryGroupList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
-        var path = budgetID.uuidString
-        path += "/categories"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getCategoryGroupList(budgetID: UUID?, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+        let path = initialPath(forBudget: budgetID) + "/categories"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(CategoriesResponse.self, from: data)
@@ -34,7 +29,7 @@ struct CategoriesController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[Category]>) {
+    static func getCategoryList(budgetID: UUID?, completion: @escaping YNABCompletion<[Category]>) {
         getCategoryGroupList(budgetID: budgetID) { (result) in
             switch result {
             case .success(let categoryGroups):
@@ -49,11 +44,10 @@ struct CategoriesController {
         }
     }
     
-    static func getCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
-        var path = budgetID.uuidString
-        path += "/categories/"
-        path += categoryID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
+        let path = initialPath(forBudget: budgetID) + "/categories/" + categoryID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(CategoryResponse.self, from: data)

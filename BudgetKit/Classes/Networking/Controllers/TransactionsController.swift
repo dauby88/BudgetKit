@@ -7,17 +7,13 @@
 
 import Foundation
 
-struct TransactionsController {
+
+/// If you pass "nil" in place of the budgetID parameter of any of the functions in this struct, it means you are requesting the information from the "default" budget the user selected when they authenticated your app
+class TransactionsController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getTransactionList(budgetID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        var path = budgetID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -35,10 +31,9 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func postTransaction(_ transaction: NewTransaction, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
-        var path = budgetID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func postTransaction(_ transaction: NewTransaction, budgetID: UUID?, completion: @escaping YNABCompletion<TransactionDetail>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         do {
             let wrapper = NewTransactionWrapper(transaction: transaction)
@@ -64,10 +59,9 @@ struct TransactionsController {
         }
     }
     
-    static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
-        var path = budgetID.uuidString
-        path += "/transactions/bulk"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID?, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions/bulk"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         do {
             let bulkTransactionsWrapper = BulkTransactionsWrapper(transactions: transactions)
@@ -93,12 +87,9 @@ struct TransactionsController {
         }
     }
     
-    static func getTransactionListForAccount(budgetID: UUID, accountID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        var path = budgetID.uuidString
-        path += "/accounts/"
-        path += accountID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getTransactionListForAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+        let path = initialPath(forBudget: budgetID) + "/accounts/" + accountID.uuidString + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -116,12 +107,9 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getTransactionListForCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        var path = budgetID.uuidString
-        path += "/categories/"
-        path += categoryID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getTransactionListForCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+        let path = initialPath(forBudget: budgetID) + "/categories/" + categoryID.uuidString + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -139,12 +127,9 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getTransactionListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        var path = budgetID.uuidString
-        path += "/payees/"
-        path += payeeID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getTransactionListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -162,11 +147,9 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getTransaction(budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
-        var path = budgetID.uuidString
-        path += "/transactions/"
-        path += transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -184,11 +167,9 @@ struct TransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func updateTransaction(_ transaction: TransactionSummary, budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
-        var path = budgetID.uuidString
-        path += "/transactions/"
-        path += transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func updateTransaction(_ transaction: TransactionSummary, budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         do {
             let body = try JSONEncoder().encode(transaction)

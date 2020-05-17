@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct AccountsController {
+class AccountsController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getAccountList(budgetID: UUID, completion: @escaping YNABCompletion<[Account]>) {
-        var path = budgetID.uuidString
-        path += "/accounts"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getAccountList(budgetID: UUID?, completion: @escaping YNABCompletion<[Account]>) {
+        let path = initialPath(forBudget: budgetID) + "/accounts"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(AccountListResponse.self, from: data)
@@ -34,11 +29,10 @@ struct AccountsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getAccount(budgetID: UUID, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
-        var path = budgetID.uuidString
-        path += "/accounts/"
-        path += accountID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
+        let path = initialPath(forBudget: budgetID) + "/accounts/" + accountID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(AccountResponse.self, from: data)
