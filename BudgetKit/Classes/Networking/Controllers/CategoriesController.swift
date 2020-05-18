@@ -7,15 +7,15 @@
 
 import Foundation
 
-class BKCategoriesController: BKBaseController {
+class CategoriesController: BaseController {
     
-    static func getCategoryGroupList(budgetID: UUID?, completion: @escaping YNABCompletion<[BKCategoryGroupWithCategories]>) {
+    static func getCategoryGroupList(budgetID: UUID?, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
         let path = initialPath(forBudget: budgetID) + "/categories"
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKCategoriesResponse.self, from: data)
+                let response = try JSONDecoder().decode(CategoriesResponse.self, from: data)
                 let categories = response.wrapper.categoryGroups
                 completion(.success(categories))
             } catch let error {
@@ -26,14 +26,14 @@ class BKCategoriesController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getCategoryList(budgetID: UUID?, completion: @escaping YNABCompletion<[BKCategory]>) {
+    static func getCategoryList(budgetID: UUID?, completion: @escaping YNABCompletion<[Category]>) {
         getCategoryGroupList(budgetID: budgetID) { (result) in
             switch result {
             case .success(let categoryGroups):
-                var categories = [BKCategory]()
+                var categories = [Category]()
                 for group in categoryGroups {
                     categories += group.categories
                 }
@@ -44,13 +44,13 @@ class BKCategoriesController: BKBaseController {
         }
     }
     
-    static func getCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<BKCategory>) {
+    static func getCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
         let path = initialPath(forBudget: budgetID) + "/categories/" + categoryID.uuidString
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKCategoryResponse.self, from: data)
+                let response = try JSONDecoder().decode(CategoryResponse.self, from: data)
                 let category = response.wrapper.category
                 completion(.success(category))
             } catch let error {
@@ -61,6 +61,6 @@ class BKCategoriesController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
 }

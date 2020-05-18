@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct BKUserController {
+struct UserController {
     
     static var baseURL: String {
-        return BKAPI.baseURL + "user/"
+        return API.baseURL + "user/"
     }
         
-    static func getUser(completion: @escaping YNABCompletion<BKUser>) {
+    static func getUser(completion: @escaping YNABCompletion<User>) {
         
         let url = URL(string: baseURL)!
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKUserResponse.self, from: data)
+                let response = try JSONDecoder().decode(UserResponse.self, from: data)
                 let user = response.wrapper.user
                 completion(.success(user))
             } catch let error {
@@ -29,6 +29,6 @@ struct BKUserController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
 }

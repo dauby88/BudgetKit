@@ -7,15 +7,15 @@
 
 import Foundation
 
-class BKPayeeController: BKBaseController {
+class PayeeController: BaseController {
     
-    static func getPayeeList(budgetID: UUID?, completion: @escaping YNABCompletion<[BKPayee]>) {
+    static func getPayeeList(budgetID: UUID?, completion: @escaping YNABCompletion<[Payee]>) {
         let path = initialPath(forBudget: budgetID) + "/payees"
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKPayeeListResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeListResponse.self, from: data)
                 let payees = response.wrapper.payees
                 completion(.success(payees))
             } catch let error {
@@ -26,16 +26,16 @@ class BKPayeeController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<BKPayee>) {
+    static func getPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
         let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKPayeeResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeResponse.self, from: data)
                 let payee = response.wrapper.payee
                 completion(.success(payee))
             } catch let error {
@@ -46,6 +46,6 @@ class BKPayeeController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
 }

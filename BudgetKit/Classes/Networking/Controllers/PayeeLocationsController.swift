@@ -7,15 +7,15 @@
 
 import Foundation
 
-class BKPayeeLocationsController: BKBaseController {
+class PayeeLocationsController: BaseController {
 
-    static func getPayeeLocationList(budgetID: UUID?, completion: @escaping YNABCompletion<[BKPayeeLocation]>) {
+    static func getPayeeLocationList(budgetID: UUID?, completion: @escaping YNABCompletion<[PayeeLocation]>) {
         let path = initialPath(forBudget: budgetID) + "/payee_locations"
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKPayeeLocationListResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)
                 let locations = response.wrapper.payeeLocations
                 completion(.success(locations))
             } catch let error {
@@ -26,16 +26,16 @@ class BKPayeeLocationsController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getPayeeLocation(budgetID: UUID?, payeeLocationID: UUID, completion: @escaping YNABCompletion<BKPayeeLocation>) {
+    static func getPayeeLocation(budgetID: UUID?, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
         let path = initialPath(forBudget: budgetID) + "/payee_locations/" + payeeLocationID.uuidString
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKPayeeLocationResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeLocationResponse.self, from: data)
                 let location = response.wrapper.payeeLocation
                 completion(.success(location))
             } catch let error {
@@ -46,16 +46,16 @@ class BKPayeeLocationsController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getLocationListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[BKPayeeLocation]>) {
+    static func getLocationListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
         let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString + "/payee_locations"
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKPayeeLocationListResponse.self, from: data)
+                let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)
                 let locations = response.wrapper.payeeLocations
                 completion(.success(locations))
             } catch let error {
@@ -66,6 +66,6 @@ class BKPayeeLocationsController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
 }

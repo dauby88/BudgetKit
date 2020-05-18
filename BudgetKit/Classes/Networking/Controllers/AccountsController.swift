@@ -7,15 +7,15 @@
 
 import Foundation
 
-class BKAccountsController: BKBaseController {
+class AccountsController: BaseController {
     
-    static func getAccountList(budgetID: UUID?, completion: @escaping YNABCompletion<[BKAccount]>) {
+    static func getAccountList(budgetID: UUID?, completion: @escaping YNABCompletion<[Account]>) {
         let path = initialPath(forBudget: budgetID) + "/accounts"
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKAccountListResponse.self, from: data)
+                let response = try JSONDecoder().decode(AccountListResponse.self, from: data)
                 let accounts = response.wrapper.accounts
                 completion(.success(accounts))
             } catch let error {
@@ -26,16 +26,16 @@ class BKAccountsController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<BKAccount>) {
+    static func getAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
         let path = initialPath(forBudget: budgetID) + "/accounts/" + accountID.uuidString
         let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
-                let response = try JSONDecoder().decode(BKAccountResponse.self, from: data)
+                let response = try JSONDecoder().decode(AccountResponse.self, from: data)
                 let account = response.wrapper.account
                 completion(.success(account))
             } catch let error {
@@ -46,6 +46,6 @@ class BKAccountsController: BKBaseController {
             completion(.failure(error))
         }
         
-        BKWebServiceManager.shared.get(url, success: success, failure: failure)
+        WebServiceManager.shared.get(url, success: success, failure: failure)
     }
 }
