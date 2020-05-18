@@ -10,8 +10,7 @@ import Foundation
 class CategoriesController: BaseController {
     
     static func getCategoryGroupList(budgetID: UUID?, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
-        let path = initialPath(forBudget: budgetID) + "/categories"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/categories")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -45,8 +44,7 @@ class CategoriesController: BaseController {
     }
     
     static func getCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
-        let path = initialPath(forBudget: budgetID) + "/categories/" + categoryID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/categories/" + categoryID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {

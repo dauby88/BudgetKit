@@ -8,24 +8,22 @@
 import Foundation
 
 class BaseController {
-    static func budgetsBaseUrl() -> String {
-        return API.baseURL + "budgets/"
-    }
+    static let budgetsBaseUrl = API.baseURL + "budgets/"
+    static let userBaseUrl = API.baseURL + "user/"
     
-    static func baseURL(forBudget budgetId: UUID?) -> URL {
-        let string = budgetsBaseUrl()
-        if budgetId != nil {
-            return URL(string: string)!
+    private static func budgetBaseUrl(forBudget budgetId: UUID?) -> String {
+        if let id = budgetId {
+            return budgetsBaseUrl + id.uuidString + "/"
         }
         
-        return URL(string: string + "default/")!
+        return budgetsBaseUrl + "default/"
     }
     
-    static func initialPath(forBudget budgetId: UUID?) -> String {
-        guard let id = budgetId else {
-            return ""
+    static func createUrl(forBudget budgetId: UUID?, andPath path: String?) -> URL {
+        if let extraPath = path {
+            return URL(string: budgetBaseUrl(forBudget: budgetId) + extraPath)!
         }
         
-        return id.uuidString
+        return URL(string: budgetBaseUrl(forBudget: budgetId))!
     }
 }

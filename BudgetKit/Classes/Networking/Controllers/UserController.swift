@@ -7,15 +7,11 @@
 
 import Foundation
 
-struct UserController {
+class UserController: BaseController {
     
-    static var baseURL: String {
-        return API.baseURL + "user/"
-    }
-        
     static func getUser(completion: @escaping YNABCompletion<User>) {
         
-        let url = URL(string: baseURL)!
+        let url = URL(string: userBaseUrl)!
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(UserResponse.self, from: data)

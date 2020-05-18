@@ -10,8 +10,7 @@ import Foundation
 class AccountsController: BaseController {
     
     static func getAccountList(budgetID: UUID?, completion: @escaping YNABCompletion<[Account]>) {
-        let path = initialPath(forBudget: budgetID) + "/accounts"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/accounts")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -30,8 +29,7 @@ class AccountsController: BaseController {
     }
     
     static func getAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
-        let path = initialPath(forBudget: budgetID) + "/accounts/" + accountID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/accounts/" + accountID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {

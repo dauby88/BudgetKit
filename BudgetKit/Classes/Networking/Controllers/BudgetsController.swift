@@ -10,7 +10,7 @@ import Foundation
 class BudgetsController: BaseController {
     
     static func getBudgets(completion: @escaping YNABCompletion<[BudgetSummary]>) {
-        let url = URL(string: budgetsBaseUrl())!
+        let url = URL(string: budgetsBaseUrl)!
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(BudgetSummaryResponse.self, from: data)
@@ -28,8 +28,7 @@ class BudgetsController: BaseController {
     }
     
     static func getBudget(id: UUID?, completion: @escaping YNABCompletion<BudgetDetail>) {
-        let path = initialPath(forBudget: id)
-        let url = URL(string: path, relativeTo: baseURL(forBudget: id))!
+        let url = createUrl(forBudget: id, andPath: nil)
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -48,8 +47,7 @@ class BudgetsController: BaseController {
     }
     
     static func getBudgetSettings(id: UUID, completion: @escaping YNABCompletion<BudgetSettings>) {
-        let path = initialPath(forBudget: id) + "/settings"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: id))!
+        let url = createUrl(forBudget: id, andPath: "/settings")
         
         let success: ((Data) -> Void) = { data in
             do {

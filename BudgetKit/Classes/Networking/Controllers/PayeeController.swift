@@ -10,8 +10,7 @@ import Foundation
 class PayeeController: BaseController {
     
     static func getPayeeList(budgetID: UUID?, completion: @escaping YNABCompletion<[Payee]>) {
-        let path = initialPath(forBudget: budgetID) + "/payees"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payees")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -30,8 +29,7 @@ class PayeeController: BaseController {
     }
     
     static func getPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
-        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payees/" + payeeID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {

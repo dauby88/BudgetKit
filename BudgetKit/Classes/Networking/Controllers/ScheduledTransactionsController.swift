@@ -10,8 +10,7 @@ import Foundation
 class ScheduledTransactionsController: BaseController {
     
     static func getScheduledTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[ScheduledTransactionDetail]>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -30,8 +29,7 @@ class ScheduledTransactionsController: BaseController {
     }
     
     static func getScheduledTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<ScheduledTransactionDetail>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions/" + transactionID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {
