@@ -46,7 +46,7 @@ class BudgetsController: BaseController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getBudgetSettings(id: UUID, completion: @escaping YNABCompletion<BudgetSettings>) {
+    static func getBudgetSettings(id: UUID?, completion: @escaping YNABCompletion<BudgetSettings>) {
         let url = createUrl(forBudget: id, andPath: "/settings")
         
         let success: ((Data) -> Void) = { data in
