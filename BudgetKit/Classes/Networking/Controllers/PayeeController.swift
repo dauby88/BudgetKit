@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct PayeeController {
+class PayeeController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getPayeeList(budgetID: UUID, completion: @escaping YNABCompletion<[Payee]>) {
-        var path = budgetID.uuidString
-        path += "/payees"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getPayeeList(budgetID: UUID?, completion: @escaping YNABCompletion<[Payee]>) {
+        let path = initialPath(forBudget: budgetID) + "/payees"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(PayeeListResponse.self, from: data)
@@ -34,11 +29,10 @@ struct PayeeController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
-        var path = budgetID.uuidString
-        path += "/payees/"
-        path += payeeID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
+        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(PayeeResponse.self, from: data)

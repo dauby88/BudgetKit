@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct PayeeLocationsController {
-    
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getPayeeLocationList(budgetID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
-        var path = budgetID.uuidString
-        path += "/payee_locations"
-        let url = URL(string: path, relativeTo: baseURL)!
+class PayeeLocationsController: BaseController {
+
+    static func getPayeeLocationList(budgetID: UUID?, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+        let path = initialPath(forBudget: budgetID) + "/payee_locations"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)
@@ -34,11 +29,10 @@ struct PayeeLocationsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getPayeeLocation(budgetID: UUID, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
-        var path = budgetID.uuidString
-        path += "/payee_locations/"
-        path += payeeLocationID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getPayeeLocation(budgetID: UUID?, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
+        let path = initialPath(forBudget: budgetID) + "/payee_locations/" + payeeLocationID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(PayeeLocationResponse.self, from: data)
@@ -55,12 +49,10 @@ struct PayeeLocationsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getLocationListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
-        var path = budgetID.uuidString
-        path += "/payees/"
-        path += payeeID.uuidString
-        path += "/payee_locations"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getLocationListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString + "/payee_locations"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        
         let success: ((Data) -> Void) = { data in
             do {
                 let response = try JSONDecoder().decode(PayeeLocationListResponse.self, from: data)

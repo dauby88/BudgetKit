@@ -92,116 +92,116 @@ public struct YNAB {
     
     // MARK: - Accounts
     /// Returns all accounts.
-    public static func getAccountList(budgetID: UUID, completion: @escaping YNABCompletion<[Account]>) {
+    public static func getAccountList(budgetID: UUID?, completion: @escaping YNABCompletion<[Account]>) {
         AccountsController.getAccountList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns a single account.
-    public static func getAccount(budgetID: UUID, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
+    public static func getAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<Account>) {
         AccountsController.getAccount(budgetID: budgetID, accountID: accountID, completion: completion)
     }
     
     // MARK: - Categories
     /// Returns all categories grouped by category group.
-    public static func getCategoryGroupList(budgetID: UUID, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
+    public static func getCategoryGroupList(budgetID: UUID?, completion: @escaping YNABCompletion<[CategoryGroupWithCategories]>) {
         CategoriesController.getCategoryGroupList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns all categories regardless of category group
-    public static func getCategoryList(budgetID: UUID, completion: @escaping YNABCompletion<[Category]>) {
+    public static func getCategoryList(budgetID: UUID?, completion: @escaping YNABCompletion<[Category]>) {
         CategoriesController.getCategoryList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns a single category.
-    public static func getCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
+    public static func getCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<Category>) {
         CategoriesController.getCategory(budgetID: budgetID, categoryID: categoryID, completion: completion)
     }
     
     // MARK: - Payees
     /// Returns all payees.
-    public static func getPayeeList(budgetID: UUID, completion: @escaping YNABCompletion<[Payee]>) {
+    public static func getPayeeList(budgetID: UUID?, completion: @escaping YNABCompletion<[Payee]>) {
         PayeeController.getPayeeList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns single payee.
-    public static func getPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
+    public static func getPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<Payee>) {
         PayeeController.getPayee(budgetID: budgetID, payeeID: payeeID, completion: completion)
     }
     
     // MARK: - Payee Locations
     /// Returns all payee locations.
-    public static func getPayeeLocationList(budgetID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+    public static func getPayeeLocationList(budgetID: UUID?, completion: @escaping YNABCompletion<[PayeeLocation]>) {
         PayeeLocationsController.getPayeeLocationList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns a single payee location.
-    public static func getPayeeLocation(budgetID: UUID, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
+    public static func getPayeeLocation(budgetID: UUID?, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
         PayeeLocationsController.getPayeeLocation(budgetID: budgetID, payeeLocationID: payeeLocationID, completion: completion)
     }
     
     /// Returns all payee locations for the specified payee.
-    public static func getLocationListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
+    public static func getLocationListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
         PayeeLocationsController.getLocationListForPayee(budgetID: budgetID, payeeID: payeeID, completion: completion)
     }
     
     // MARK: - Months
     /// Returns all budget months.
-    public static func getBudgetMonthsList(budgetID: UUID, completion: @escaping YNABCompletion<[MonthSummary]>) {
+    public static func getBudgetMonthsList(budgetID: UUID?, completion: @escaping YNABCompletion<[MonthSummary]>) {
         MonthsController.getBudgetMonthsList(budgetID: budgetID, completion: completion)
     }
     
     /// Returns a single budget month.
-    public static func getBudgetMonth(budgetID: UUID, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
+    public static func getBudgetMonth(budgetID: UUID?, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
         MonthsController.getBudgetMonth(budgetID: budgetID, month: month, completion: completion)
     }
     
     // MARK: - Transactions
     /// Returns budget transactions.
-    public static func getTransactionList(budgetID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+    public static func getTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[TransactionDetail]>) {
         TransactionsController.getTransactionList(budgetID: budgetID, completion: completion)
     }
     
     /// Creates a transaction.
-    public static func createNewTransaction(_ transaction: NewTransaction, budgetID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+    public static func createNewTransaction(_ transaction: NewTransaction, budgetID: UUID?, completion: @escaping YNABCompletion<TransactionDetail>) {
         TransactionsController.postTransaction(transaction, budgetID: budgetID, completion: completion)
     }
     
     /// Creates multiple transactions.
-    public static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
+    public static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID?, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
         TransactionsController.postBulkTransactions(transactions, budgetID: budgetID, completion: completion)
     }
     
     /// Returns all transactions for a specified account.
-    public static func getTransactionListForAccount(budgetID: UUID, accountID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+    public static func getTransactionListForAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
         TransactionsController.getTransactionListForAccount(budgetID: budgetID, accountID: accountID, completion: completion)
     }
     
     /// Returns all transactions for a specified category.
-    public static func getTransactionListForCategory(budgetID: UUID, categoryID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+    public static func getTransactionListForCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
         TransactionsController.getTransactionListForCategory(budgetID: budgetID, categoryID: categoryID, completion: completion)
     }
     
     /// Returns all transactions for a specified payee.
-    public static func getTransactionListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
+    public static func getTransactionListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
         TransactionsController.getTransactionListForPayee(budgetID: budgetID, payeeID: payeeID, completion: completion)
     }
     
     /// Returns a single transaction.
-    public static func getTransaction(budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+    public static func getTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
         TransactionsController.getTransaction(budgetID: budgetID, transactionID: transactionID, completion: completion)
     }
     
-    public static func updateTransaction(_ transaction: TransactionSummary, budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
+    public static func updateTransaction(_ transaction: TransactionSummary, budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
         TransactionsController.updateTransaction(transaction, budgetID: budgetID, transactionID: transactionID, completion: completion)
     }
     
     // MARK: - Scheduled Transactions
     
-    public static func getScheduledTransactionList(budgetID: UUID, completion: @escaping YNABCompletion<[ScheduledTransactionDetail]>) {
+    public static func getScheduledTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[ScheduledTransactionDetail]>) {
         ScheduledTransactionsController.getScheduledTransactionList(budgetID: budgetID, completion: completion)
     }
     
-    public static func getScheduledTransaction(budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<ScheduledTransactionDetail>) {
+    public static func getScheduledTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<ScheduledTransactionDetail>) {
         ScheduledTransactionsController.getScheduledTransaction(budgetID: budgetID, transactionID: transactionID, completion: completion)
     }
 }

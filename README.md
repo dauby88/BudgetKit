@@ -79,7 +79,7 @@ YNAB.getBudget(id: UUID, completion: @escaping YNABCompletion<BudgetDetail>)
 Returns all transactions for a specified payee.  
 
 ```swift
-YNAB.getTransactionListForPayee(budgetID: UUID, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>)
+YNAB.getTransactionListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>)
 ```
 
 ## Author

@@ -7,17 +7,11 @@
 
 import Foundation
 
-struct ScheduledTransactionsController {
+class ScheduledTransactionsController: BaseController {
     
-    static var baseURL: URL {
-        let string = API.baseURL + "budgets/"
-        return URL(string: string)!
-    }
-    
-    static func getScheduledTransactionList(budgetID: UUID, completion: @escaping YNABCompletion<[ScheduledTransactionDetail]>) {
-        var path = budgetID.uuidString
-        path += "/transactions"
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getScheduledTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[ScheduledTransactionDetail]>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions"
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -35,11 +29,9 @@ struct ScheduledTransactionsController {
         WebServiceManager.shared.get(url, success: success, failure: failure)
     }
     
-    static func getScheduledTransaction(budgetID: UUID, transactionID: UUID, completion: @escaping YNABCompletion<ScheduledTransactionDetail>) {
-        var path = budgetID.uuidString
-        path += "/transactions/"
-        path += transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL)!
+    static func getScheduledTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<ScheduledTransactionDetail>) {
+        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
+        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
         
         let success: ((Data) -> Void) = { data in
             do {
