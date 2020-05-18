@@ -12,6 +12,7 @@ public enum GoalType: String, Decodable {
     case targetCategoryBalance = "TB"
     case targetCategoryBalanceByDate = "TBD"
     case monthlyFunding = "MF"
+    case needGoal = "NEED"
     
     public var description: String {
         switch self {
@@ -21,6 +22,8 @@ public enum GoalType: String, Decodable {
             return "Target Category Balance by Date"
         case .monthlyFunding:
             return "Monthly Funding"
+        case .needGoal:
+            return "Plan Your Spending"
         }
     }
     
