@@ -12,8 +12,7 @@ import Foundation
 class TransactionsController: BaseController {
     
     static func getTransactionList(budgetID: UUID?, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -32,8 +31,7 @@ class TransactionsController: BaseController {
     }
     
     static func postTransaction(_ transaction: NewTransaction, budgetID: UUID?, completion: @escaping YNABCompletion<TransactionDetail>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions")
         
         do {
             let wrapper = NewTransactionWrapper(transaction: transaction)
@@ -60,8 +58,7 @@ class TransactionsController: BaseController {
     }
     
     static func postBulkTransactions(_ transactions: [NewTransaction], budgetID: UUID?, completion: @escaping YNABCompletion<BulkTransactionIDs>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions/bulk"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions/bulk")
         
         do {
             let bulkTransactionsWrapper = BulkTransactionsWrapper(transactions: transactions)
@@ -88,8 +85,7 @@ class TransactionsController: BaseController {
     }
     
     static func getTransactionListForAccount(budgetID: UUID?, accountID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        let path = initialPath(forBudget: budgetID) + "/accounts/" + accountID.uuidString + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/accounts/" + accountID.uuidString + "/transactions")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -108,8 +104,7 @@ class TransactionsController: BaseController {
     }
     
     static func getTransactionListForCategory(budgetID: UUID?, categoryID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        let path = initialPath(forBudget: budgetID) + "/categories/" + categoryID.uuidString + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/categories/" + categoryID.uuidString + "/transactions")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -128,8 +123,7 @@ class TransactionsController: BaseController {
     }
     
     static func getTransactionListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[TransactionDetail]>) {
-        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString + "/transactions"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payees/" + payeeID.uuidString + "/transactions")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -148,8 +142,7 @@ class TransactionsController: BaseController {
     }
     
     static func getTransaction(budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions/" + transactionID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -168,8 +161,7 @@ class TransactionsController: BaseController {
     }
     
     static func updateTransaction(_ transaction: TransactionSummary, budgetID: UUID?, transactionID: UUID, completion: @escaping YNABCompletion<TransactionDetail>) {
-        let path = initialPath(forBudget: budgetID) + "/transactions/" + transactionID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/transactions/" + transactionID.uuidString)
         
         do {
             let body = try JSONEncoder().encode(transaction)

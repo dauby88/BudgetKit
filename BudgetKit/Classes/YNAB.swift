@@ -81,12 +81,12 @@ public struct YNAB {
     }
     
     /// Returns a single budget with all related entities. This resource is effectively a full budget export.
-    public static func getBudget(id: UUID, completion: @escaping YNABCompletion<BudgetDetail>) {
+    public static func getBudget(id: UUID?, completion: @escaping YNABCompletion<BudgetDetail>) {
         BudgetsController.getBudget(id: id, completion: completion)
     }
     
     /// Returns settings for a budget.
-    public static func getBudgetSettings(id: UUID, completion: @escaping YNABCompletion<BudgetSettings>) {
+    public static func getBudgetSettings(id: UUID?, completion: @escaping YNABCompletion<BudgetSettings>) {
         BudgetsController.getBudgetSettings(id: id, completion: completion)
     }
     

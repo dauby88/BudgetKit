@@ -10,8 +10,7 @@ import Foundation
 class PayeeLocationsController: BaseController {
 
     static func getPayeeLocationList(budgetID: UUID?, completion: @escaping YNABCompletion<[PayeeLocation]>) {
-        let path = initialPath(forBudget: budgetID) + "/payee_locations"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payee_locations/")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -30,8 +29,7 @@ class PayeeLocationsController: BaseController {
     }
     
     static func getPayeeLocation(budgetID: UUID?, payeeLocationID: UUID, completion: @escaping YNABCompletion<PayeeLocation>) {
-        let path = initialPath(forBudget: budgetID) + "/payee_locations/" + payeeLocationID.uuidString
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payee_locations/" + payeeLocationID.uuidString)
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -50,8 +48,7 @@ class PayeeLocationsController: BaseController {
     }
     
     static func getLocationListForPayee(budgetID: UUID?, payeeID: UUID, completion: @escaping YNABCompletion<[PayeeLocation]>) {
-        let path = initialPath(forBudget: budgetID) + "/payees/" + payeeID.uuidString + "/payee_locations"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/payees/" + payeeID.uuidString + "/payee_locations")
         
         let success: ((Data) -> Void) = { data in
             do {

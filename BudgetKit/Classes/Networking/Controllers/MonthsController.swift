@@ -10,8 +10,7 @@ import Foundation
 class MonthsController: BaseController {
     
     static func getBudgetMonthsList(budgetID: UUID?, completion: @escaping YNABCompletion<[MonthSummary]>) {
-        let path = initialPath(forBudget: budgetID) + "/months"
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/months")
         
         let success: ((Data) -> Void) = { data in
             do {
@@ -30,8 +29,7 @@ class MonthsController: BaseController {
     }
     
     static func getBudgetMonth(budgetID: UUID?, month: String, completion: @escaping YNABCompletion<MonthDetail>) {
-        let path = initialPath(forBudget: budgetID) + "/months/" + month
-        let url = URL(string: path, relativeTo: baseURL(forBudget: budgetID))!
+        let url = createUrl(forBudget: budgetID, andPath: "/months/" + month)
         
         let success: ((Data) -> Void) = { data in
             do {
